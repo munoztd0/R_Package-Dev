@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 # Deploy Your R Code!
 ]
 .subtitle[
-## Geneva R Lunch
+## @ Geneva R Lunch
 ]
 .author[
 ### ⠀
@@ -34,7 +34,7 @@ class: center, middle, inverse, title-slide
 ### ⠀
 ]
 .date[
-### David Munoz Tord · 2023-03-28
+### David Munoz Tord · 2023-03-31
 ]
 
 ---
@@ -45,8 +45,16 @@ class: center, middle, inverse, title-slide
 
 
 
-&lt;style&gt;
 
+&lt;style&gt;
+footnotes {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  width: 80%;
+  color: #3C989E;
+  font-size: 1em;
+}
 &lt;/style&gt;
 
 
@@ -63,36 +71,56 @@ class: center, middle, inverse, title-slide
 &lt;center&gt;&lt;img src="https://media.tenor.com/KjJTBQ9lftsAAAAC/why-huh.gif" alt="But Why" height="200px" /&gt;&lt;/center&gt;
 
 
+
+
 ---
 name: TOC
 
-# Today
+# Today's Workshop
 
 .left-column[
 
 &lt;br /&gt;
 
-`Version Control`
 
-`Github Pages`
 
-`Posit Cloud`
 
-`Shiny Apps ?`
 ]
+
+
 
 .right-column[
-- ### Interactive
-- ### Just the tip of the iceberg
-- ### Don't hesitate to interupt
-- ### Different levels
++ ### Interactive
+{{content}}
+
 ]
+
+--
+
++ ### Just the tip of the iceberg
+{{content}}
+
+--
+
++ ### Don't hesitate to interrupt
+{{content}}
+
+--
+
++ ### Different levels
+
+---
+class: inverse center middle
+
+# Version Control - Git
 
 ---
 
-# &lt;h1 align="center" id="heading"&gt;Version Control
 
 .left-column2[
+
+&lt;br /&gt;
+
 ## You don't need to use it...
 &lt;br /&gt;
 
@@ -108,9 +136,9 @@ name: TOC
 
 .right-column2[
 
-&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
 
-&lt;center&gt;&lt;img src="https://octodex.github.com/images/labtocat.png" alt="GithHub Octocat" height="200px" /&gt;&lt;/center&gt;
+&lt;center&gt;&lt;img src="https://octodex.github.com/images/labtocat.png" alt="GithHub Octocat" width="600px" /&gt;&lt;/center&gt;
 
 ]
 
@@ -118,22 +146,128 @@ name: TOC
 
 # Create a Github Account
 
-.left-column[
+&lt;footnotes align="center"&gt;
+
+&lt;strong&gt; Version Control &lt;/strong&gt;  -  Github Pages  -  Posit Cloud  -  Shiny Apps 
+
+&lt;/footnotes&gt;
 
 &lt;br /&gt;
 
-**Version Control**
+- ### [GitHub Signup](https://github.com/signup?user_email=&amp;source=form-home-signup) - We will need it later on..
 
-`Github Pages`
+- ### [Set Up RStudio with Git](https://happygitwithr.com/ssh-keys.html) 
+It is quite annoying and technical, so **we will not go through it now** but don't hesitate to ask me questions about it after the workshop
 
-`Posit Cloud`
+&lt;br /&gt;
+&lt;br /&gt;
 
-`Shiny Apps ?`
+Of course many alternatives to GitHub: [Gitlab](https://gitlab.com/users/sign_in), [Atlassian Bitbucket](https://id.atlassian.com/login?)
+
+
+---
+class: inverse center middle
+
+# GitHub Pages
+
+---
+
+# Very Simple Way to Host You Reports
+
+&lt;footnotes align="center"&gt;
+
+ Version Control  - &lt;strong&gt; Github Pages &lt;/strong&gt;   -  Posit Cloud  -  Shiny Apps 
+
+&lt;/footnotes&gt;
+
+&lt;br /&gt;
+
+.left-column2[
+
++ ### Open up Rstudio 
+{{content}}
+
 ]
 
-.right-column[
-- ### [GitHub Signup](https://github.com/signup?user_email=&amp;source=form-home-signup)
+.right-column2[
+
+&lt;center&gt;&lt;img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/md.png" alt="new repo" width="200px" /&gt;&lt;/center&gt;
+
+&lt;br /&gt; 
+
+&lt;center&gt;&lt;img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/html.png" alt="new repo" width="200px" /&gt;&lt;/center&gt;
+
+
 ]
+
+--
++ ### Create new RMarkdown file
+{{content}}
+--
++ ### Choose "HTML output"
+{{content}}
+--
++ ### Modify whatever ..
+{{content}}
+--
++ ### Knit it like it's hot !
+
+
+
+
+
+---
+
+# Very Simple Way to Host You Reports
+
+&lt;footnotes align="center"&gt;
+
+ Version Control  -  &lt;strong&gt; Github Pages &lt;/strong&gt;  -  Posit Cloud  -  Shiny Apps 
+
+&lt;/footnotes&gt;
+
+
+
+.left-column2[
+
++ #### Rename the \*.html file that you just created **index.html**
+{{content}}
+
+]
+
+.right-column2[
+
+&lt;center&gt;&lt;img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/new.png" alt="new repo" height="100px" /&gt;&lt;/center&gt;
+
+&lt;br /&gt;
+
+&lt;center&gt;&lt;img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/public.png" alt="new repo" height="100px" /&gt;&lt;/center&gt;
+
+&lt;br /&gt; 
+
+&lt;center&gt;&lt;img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/upload.png" alt="new repo" height="100px" /&gt;&lt;/center&gt;
+
+]
+
+--
++ #### Go to your GitHub profile under **Repositories**
+{{content}}
+--
++ #### Click on the **New** button (the green one on the top right)
+{{content}}
+--
++ #### Name it **R Lunch** or whatever...
+{{content}}
+--
++ #### Make sure it's **public**
+{{content}}
+--
++ #### Click on **create repository** | Bravo ! (if you just create your first repository)
+{{content}}
+--
++ #### And click on **uploading an existing file** and choose the index.html file
+
+--
 
 ---
 class: inverse center middle
@@ -386,8 +520,8 @@ exclude: false
 DT::datatable(head(mtcars), fillContainer = FALSE, options = list(pageLength = 4))
 ```
 
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-93afbe53d974fcf58ec9" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-93afbe53d974fcf58ec9">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76],[2.62,2.875,2.32,3.215,3.44,3.46],[16.46,17.02,18.61,19.44,17.02,20.22],[0,0,1,1,0,1],[1,1,1,0,0,0],[4,4,4,3,3,3],[4,4,1,1,2,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-740bc9eac864ddd5e908" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-740bc9eac864ddd5e908">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76],[2.62,2.875,2.32,3.215,3.44,3.46],[16.46,17.02,18.61,19.44,17.02,20.22],[0,0,1,1,0,1],[1,1,1,0,0,0],[4,4,4,3,3,3],[4,4,1,1,2,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 layout: true
@@ -476,7 +610,7 @@ g + xaringanthemer::theme_xaringan(text_font_size = 16, title_font_size = 18) +
   ggtitle("A Plot About Cars")
 ```
 
-.footnote[Requires `{showtext}`]
+
 
 ---
 layout: false
@@ -531,8 +665,6 @@ Slides created via the R packages:
 
 [**xaringan**](https://github.com/yihui/xaringan)&lt;br&gt;
 [gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
-
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -541,7 +673,7 @@ The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihu
 "highlightStyle": "github",
 "highlightLines": true,
 "ratio": "16:9",
-"countIncrementalSlides": true
+"countIncrementalSlides": false
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

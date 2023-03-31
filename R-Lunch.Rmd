@@ -1,6 +1,6 @@
 ---
 title: "Deploy Your R Code!"
-subtitle: " Geneva R Lunch "   
+subtitle: "@ Geneva R Lunch "   
 author: 
   - "\u2800"
   - "\u2800"
@@ -13,7 +13,7 @@ output:
       highlightStyle: github
       highlightLines: true
       ratio: 16:9
-      countIncrementalSlides: true
+      countIncrementalSlides: false
 ---
 
 
@@ -37,8 +37,16 @@ library(xaringanthemer)
 
 ```
 
-<style>
 
+<style>
+footnotes {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  width: 80%;
+  color: #3C989E;
+  font-size: 1em;
+}
 </style>
 
 
@@ -55,36 +63,62 @@ library(xaringanthemer)
 <center><img src="https://media.tenor.com/KjJTBQ9lftsAAAAC/why-huh.gif" alt="But Why" height="200px" /></center>
 
 
+
+
 ---
 name: TOC
 
-# Today
+# Today's Workshop
 
 .left-column[
 
 <br />
 
-`Version Control`
 
-`Github Pages`
 
-`Posit Cloud`
 
-`Shiny Apps ?`
 ]
+
+
 
 .right-column[
-- ### Interactive
-- ### Just the tip of the iceberg
-- ### Don't hesitate to interupt
-- ### Different levels
++ ### Interactive
+{{content}}
+
 ]
+
+--
+
++ ### Just the tip of the iceberg
+{{content}}
+
+--
+
++ ### Don't hesitate to interrupt
+{{content}}
+
+--
+
++ ### Different levels
+
+---
+class: inverse center middle
+
+# Version Control - Git
 
 ---
 
-# <h1 align="center" id="heading">Version Control
+<footnotes align="center">
+
+<strong> Version Control </strong>  -  Github Pages  -  Posit Cloud  -  Shiny Apps 
+
+</footnotes>
+
 
 .left-column2[
+
+<br />
+
 ## You don't need to use it...
 <br />
 
@@ -100,9 +134,9 @@ name: TOC
 
 .right-column2[
 
-<br /><br /><br />
+<br /><br /><br /><br /><br />
 
-<center><img src="https://octodex.github.com/images/labtocat.png" alt="GithHub Octocat" height="200px" /></center>
+<center><img src="https://octodex.github.com/images/labtocat.png" alt="GithHub Octocat" width="600px" /></center>
 
 ]
 
@@ -110,22 +144,179 @@ name: TOC
 
 # Create a Github Account
 
-.left-column[
+<footnotes align="center">
+
+<strong> Version Control </strong>  -  Github Pages  -  Posit Cloud  -  Shiny Apps 
+
+</footnotes>
 
 <br />
 
-**Version Control**
+- ### [GitHub Signup](https://github.com/signup?user_email=&source=form-home-signup) - We will need it later on..
 
-`Github Pages`
+- ### [Set Up RStudio with Git](https://happygitwithr.com/ssh-keys.html) 
+It is quite annoying and technical, so **we will not go through it now** but don't hesitate to ask me questions about it after the workshop
 
-`Posit Cloud`
+<br />
+<br />
 
-`Shiny Apps ?`
+Of course many alternatives to GitHub: [Gitlab](https://gitlab.com/users/sign_in), [Atlassian Bitbucket](https://id.atlassian.com/login?)
+
+
+---
+class: inverse center middle
+
+# GitHub Pages
+
+---
+
+# Very Simple Way to Host You Reports
+
+<footnotes align="center">
+
+ Version Control  - <strong> Github Pages </strong>   -  Posit Cloud  -  Shiny Apps 
+
+</footnotes>
+
+
+.left-column2[
+
++ ### Open up Rstudio 
+{{content}}
+
 ]
 
-.right-column[
-- ### [GitHub Signup](https://github.com/signup?user_email=&source=form-home-signup)
+.right-column2[
+
+<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/md.png" alt="new repo" width="200px" /></center>
+
+<br /> 
+
+<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/html.png" alt="new repo" width="200px" /></center>
+
+
 ]
+
+--
++ ### Create new RMarkdown file
+{{content}}
+--
++ ### Choose "HTML output"
+{{content}}
+--
++ ### Modify whatever ..
+{{content}}
+--
++ ### Knit it like it's hot !
+
+
+
+
+
+---
+
+# Very Simple Way to Host You Reports
+
+<footnotes align="center">
+
+ Version Control  -  <strong> Github Pages </strong>  -  Posit Cloud  -  Shiny Apps 
+
+</footnotes>
+
+
+
+.left-column2[
+
++ #### Rename the \*.html file that you just created **index.html**
+{{content}}
+
+]
+
+.right-column2[
+
+<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/new.png" alt="new repo" height="100px" /></center>
+
+<br />
+
+<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/public.png" alt="new repo" height="100px" /></center>
+
+<br /> 
+
+<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/upload.png" alt="new repo" height="100px" /></center>
+
+]
+
+--
++ #### Go to your GitHub profile under **Repositories**
+{{content}}
+--
++ #### Click on the **New** button (the green one on the top right)
+{{content}}
+--
++ #### Name it **R Lunch** or whatever...
+{{content}}
+--
++ #### Make sure it's **public**
+{{content}}
+--
++ #### Click on **create repository** | Bravo ! (if you just create your first repository)
+{{content}}
+--
++ #### And click on **uploading an existing file** and choose the **index.html** file
+--
+
+
+
+
+# Very Simple Way to Host You Reports
+
+<footnotes align="center">
+
+ Version Control  -  <strong> Github Pages </strong>  -  Posit Cloud  -  Shiny Apps 
+
+</footnotes>
+
+
+
+.left-column2[
+
++ #### Rename the \*.html file that you just created **index.html**
+{{content}}
+
+]
+
+.right-column2[
+
+<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/new.png" alt="new repo" height="100px" /></center>
+
+<br />
+
+<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/public.png" alt="new repo" height="100px" /></center>
+
+<br /> 
+
+<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/upload.png" alt="new repo" height="100px" /></center>
+
+]
+
+--
++ #### Go to your GitHub profile under **Repositories**
+{{content}}
+--
++ #### Click on the **New** button (the green one on the top right)
+{{content}}
+--
++ #### Name it **R Lunch** or whatever...
+{{content}}
+--
++ #### Make sure it's **public**
+{{content}}
+--
++ #### Click on **create repository** | Bravo ! (if you just create your first repository)
+{{content}}
+--
++ #### And click on **uploading an existing file** and choose the **index.html** file
+--
 
 ---
 class: inverse center middle
@@ -314,7 +505,7 @@ g + xaringanthemer::theme_xaringan(text_font_size = 16, title_font_size = 18) +
   ggtitle("A Plot About Cars")
 ```
 
-.footnote[Requires `{showtext}`]
+
 
 ---
 layout: false
@@ -369,5 +560,3 @@ Slides created via the R packages:
 
 [**xaringan**](https://github.com/yihui/xaringan)<br>
 [gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
-
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
