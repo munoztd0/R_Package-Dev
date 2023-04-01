@@ -106,11 +106,13 @@ class: inverse center middle
 
 # Version Control - Git
 
+![](https://docs.github.com/assets/images/help/repository/branching.png)
+
 ---
 
 <footnotes align="center">
 
-<strong> Version Control </strong>  -  Github Pages  -  Posit Cloud  -  Shiny Apps 
+<strong> Version Control </strong>  -  Github Pages  -  Shiny Apps - Posit Cloud 
 
 </footnotes>
 
@@ -146,7 +148,7 @@ class: inverse center middle
 
 <footnotes align="center">
 
-<strong> Version Control </strong>  -  Github Pages  -  Posit Cloud  -  Shiny Apps 
+<strong> Version Control </strong>  -  Github Pages  -  Shiny Apps - Posit Cloud 
 
 </footnotes>
 
@@ -168,13 +170,16 @@ class: inverse center middle
 
 # GitHub Pages
 
+<center><img src="./R-Lunch_files/img/octocat.png" alt="new repo" width="200px" /></center>
+
+
 ---
 
 # Very Simple Way to Host You Reports
 
 <footnotes align="center">
 
- Version Control  - <strong> Github Pages </strong>   -  Posit Cloud  -  Shiny Apps 
+ Version Control  - <strong> Github Pages </strong>   -  Shiny Apps - Posit Cloud 
 
 </footnotes>
 
@@ -188,11 +193,11 @@ class: inverse center middle
 
 .right-column2[
 
-<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/md.png" alt="new repo" width="200px" /></center>
+<center><img src="./R-Lunch_files/img/md.png" alt="new repo" width="200px" /></center>
 
 <br /> 
 
-<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/html.png" alt="new repo" width="200px" /></center>
+<center><img src="./R-Lunch_files/img/html.png" alt="new repo" width="200px" /></center>
 
 
 ]
@@ -215,11 +220,11 @@ class: inverse center middle
 
 ---
 
-# Very Simple Way to Host You Reports
+# Very Simple Way to Host You Reports - 2
 
 <footnotes align="center">
 
- Version Control  -  <strong> Github Pages </strong>  -  Posit Cloud  -  Shiny Apps 
+ Version Control  -  <strong> Github Pages </strong>  -  Shiny Apps - Posit Cloud 
 
 </footnotes>
 
@@ -234,68 +239,15 @@ class: inverse center middle
 
 .right-column2[
 
-<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/new.png" alt="new repo" height="100px" /></center>
+<center><img src="./R-Lunch_files/img/new.png" alt="new repo" height="100px" /></center>
 
 <br />
 
-<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/public.png" alt="new repo" height="100px" /></center>
+<center><img src="./R-Lunch_files/img/public.png" alt="new repo" height="100px" /></center>
 
 <br /> 
 
-<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/upload.png" alt="new repo" height="100px" /></center>
-
-]
-
---
-+ #### Go to your GitHub profile under **Repositories**
-{{content}}
---
-+ #### Click on the **New** button (the green one on the top right)
-{{content}}
---
-+ #### Name it **R Lunch** or whatever...
-{{content}}
---
-+ #### Make sure it's **public**
-{{content}}
---
-+ #### Click on **create repository** | Bravo ! (if you just create your first repository)
-{{content}}
---
-+ #### And click on **uploading an existing file** and choose the **index.html** file
---
-
-
-
-
-# Very Simple Way to Host You Reports
-
-<footnotes align="center">
-
- Version Control  -  <strong> Github Pages </strong>  -  Posit Cloud  -  Shiny Apps 
-
-</footnotes>
-
-
-
-.left-column2[
-
-+ #### Rename the \*.html file that you just created **index.html**
-{{content}}
-
-]
-
-.right-column2[
-
-<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/new.png" alt="new repo" height="100px" /></center>
-
-<br />
-
-<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/public.png" alt="new repo" height="100px" /></center>
-
-<br /> 
-
-<center><img src="/home/david/repos/Web_Deployment_With_R/R-Lunch_files/img/upload.png" alt="new repo" height="100px" /></center>
+<center><img src="./R-Lunch_files/img/upload.png" alt="new repo" height="100px" /></center>
 
 ]
 
@@ -319,237 +271,177 @@ class: inverse center middle
 --
 
 ---
+
+# Very Simple Way to Host You Reports - 3
+
+<footnotes align="center">
+
+ Version Control  -  <strong> Github Pages </strong>  -  Shiny Apps - Posit Cloud 
+
+</footnotes>
+
+
+
+.left-column4[
+
++ #### Now go to -> **Settings**
+{{content}}
+
+]
+
+.right-column4[
+
+<img src="./R-Lunch_files/img/branch.png" alt="new repo" widthh="315px" />
+
+]
+
+--
+<br /> 
++ #### Click on **Pages** 
+{{content}}
+--
+<br /> 
++ #### Then under **Branch** click on **none** and select **main**
+{{content}}
+--
+<br /> 
++ #### Finally just press on **Save**
+--
+
+---
+
+<footnotes align="center">
+
+ Version Control   -  <strong> Github Pages </strong> -  Shiny Apps - Posit Cloud 
+
+</footnotes>
+
+
+<br />
+
+## Now we wait...
+<br />
+
+
+### Let every body catch up 
+
+<br />
+
+<center><img src="./R-Lunch_files/img/loading.png" alt="Job Loading" width="600px" /></center>
+
+
+
+
+---
+
+# Check out your Personal Page !
+
+<footnotes align="center">
+
+ Version Control  -  <strong> Github Pages </strong>  -  Shiny Apps - Posit Cloud 
+
+</footnotes>
+
+
+
+.left-column4[
+
++ #### Back in the main page of your repo you should see a new infos: ** Environments**
+{{content}}
+
+]
+
+.right-column4[
+
+<center><img src="./R-Lunch_files/img/githubPages.png" alt="new page" width="275px" /></center>
+
+<br />
+
+<center><img src="./R-Lunch_files/img/deploy.png" alt="new page" width="275px" /></center>
+
+]
+
+--
+<br /> 
++ #### Click on **github-pages** under **Environments**
+{{content}}
+--
+<br /> 
++ #### Then click on **View deployment**
+{{content}}
+--
+<br /> 
++ #### Here you go, you're a Full Stack Web Developer now !
+--
+
+---
+
+
 class: inverse center middle
 
-# Topic Changing Interstitial
+# Shiny Apps
+
+![](https://shiny.rstudio.com/images/build-web-apps-tutorial.png)
+
+
+---
+
+
+# Build an App
+
+<footnotes align="center">
+
+ Version Control  -   Github Pages  -  <strong> Shiny Apps </strong>  - Posit Cloud 
+
+</footnotes>
+
+
+
+.left-column2[
+
++ #### Back in **Rstudio** click on **new file** and **Shiny Web App**
+{{content}}
+
+]
+
+.right-column2[
+
+<center><img src="./R-Lunch_files/img/shinyapp.png" alt="new page" width="275px" /></center>
+
+<br /> 
+
+<center><img src="./R-Lunch_files/img/run.png" alt="new page" width="275px" /></center>
+
+
+]
 
 --
+<br /> 
++ #### You can play around and click on **Run App** to test it
+{{content}}
+--
+<br /> 
++ #### For those who are already a bit comfortable with Shiny and or Echarts4r
 
-```
+You can go to []()
+{{content}}
+--
+<br /> 
++ #### Here you go, you're a Full Stack Web Developer now !
+--
+
+
+---
+
+
+
 class: inverse center middle
-```
 
----
-layout: true
+# Posit Cloud
 
-## Blocks
+![](https://posit.cloud/images/posit-cloud.jpg)
 
----
 
-### Blockquote
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
----
-
-### Code Blocks
-
-#### R Code
-
-```{r eval=FALSE}
-ggplot(gapminder) +
-  aes(x = gdpPercap, y = lifeExp, size = pop, color = country) +
-  geom_point() +
-  facet_wrap(~year)
-```
-
-#### JavaScript
-
-```js
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
----
-
-### More R Code
-
-```{r eval=FALSE}
-dplyr::starwars %>% dplyr::slice_sample(n = 4)
-```
-
----
-
-```{r message=TRUE, eval=requireNamespace("cli", quietly = TRUE)}
-cli::cli_alert_success("It worked!")
-```
-
---
-
-```{r message=TRUE}
-message("Just a friendly message")
-```
-
---
-
-```{r warning=TRUE}
-warning("This could be bad...")
-```
-
---
-
-```{r error=TRUE}
-stop("I hope you're sitting down for this")
-```
-
-
----
-layout: true
-
-## Tables
-
----
-exclude: `r if (requireNamespace("tibble", quietly=TRUE)) "false" else "true"`
-
-```{r eval=requireNamespace("tibble", quietly=TRUE)}
-tibble::as_tibble(mtcars)
-```
-
----
-
-```{r}
-knitr::kable(head(mtcars), format = 'html')
-```
-
----
-exclude: `r if (requireNamespace("DT", quietly=TRUE)) "false" else "true"`
-
-```{r eval=requireNamespace("DT", quietly=TRUE)}
-DT::datatable(head(mtcars), fillContainer = FALSE, options = list(pageLength = 4))
-```
-
----
-layout: true
-
-## Lists
-
----
-
-.pull-left[
-#### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-]
-
-.pull-right[
-
-#### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-]
-
----
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
----
-
-### Nesting an ol in ul in an ol
-
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-  1. level 4 item (ol)
-  1. level 4 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
-
----
-layout: true
-
-## Plots
-
----
-
-```{r plot-example, eval=requireNamespace("ggplot2", quietly=TRUE)}
-library(ggplot2)
-(g <- ggplot(mpg) + aes(hwy, cty, color = class) + geom_point())
-```
-
----
-
-```{r plot-example-themed, eval=requireNamespace("showtext", quietly=TRUE) && requireNamespace("ggplot2", quietly=TRUE)}
-g + xaringanthemer::theme_xaringan(text_font_size = 16, title_font_size = 18) +
-  ggtitle("A Plot About Cars")
-```
-
-
-
----
-layout: false
-
-## Square image
-
-<center><img src="https://octodex.github.com/images/labtocat.png" alt="GithHub Octocat" height="400px" /></center>
-
-.footnote[GitHub Octocat]
-
----
-
-### Wide image
-
-![A wide image with a diagram of branching in git.](https://docs.github.com/assets/images/help/repository/branching.png)
-
-.footnote[Wide images scale to 100% slide width]
-
----
-
-## Two images
-
-.pull-left[
-![A GitHub Octocat, style "mother hubber"](https://octodex.github.com/images/motherhubbertocat.png)
-]
-
-.pull-right[
-![A GitHub Octocat, style "dinotcat"](https://octodex.github.com/images/dinotocat.png)
-]
-
----
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
 
 ---
 class: center, middle

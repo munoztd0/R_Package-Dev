@@ -165,12 +165,21 @@ a, a > code {
   float: left;
 }
 
-.left-column h2, .left-column h3, .left-column2 h2, .left-column2 h3  {
+.left-column4 {
+  width: 55%;
+  height: 92%;
+  float: left;
+}
+
+.left-column h2, .left-column h3, .left-column2 h2, .left-column2 h3,.left-column4 h2, .left-column4 h3  {
   color: #3C989E99;
 }
-.left-column h2:last-of-type, .left-column h3:last-child, .left-column2 h2:last-of-type, .left-column2 h3:last-child {
+
+.left-column h2:last-of-type, .left-column h3:last-child, .left-column2 h2:last-of-type, .left-column2 h3:last-child, .left-column4 h2:last-of-type, .left-column4 h3:last-child{
   color: #3C989E;
 }
+
+
 .right-column {
   width: 75%;
   float: right;
@@ -182,6 +191,15 @@ a, a > code {
   float: left;
   padding-top: 1em;
 }
+
+
+.right-column4 {
+  width: 40%;
+  float: left;
+  padding-top: 1em;
+}
+
+
 .pull-left {
   float: left;
   width: 47%;
