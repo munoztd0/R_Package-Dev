@@ -51,30 +51,11 @@ footnotes {
 
 
 
-# dɪˈplɔɪmənt
-
-
-<br /> 
-
-### <h3 align="center" id="heading">Web deployment is the process of deploying the code (html, python, javascript, **R**, etc... ) from **your** machine to a **hosting** platform. </h3>
-
-<br />
- 
-<center><img src="https://media.tenor.com/KjJTBQ9lftsAAAAC/why-huh.gif" alt="But Why" height="200px" /></center>
-
-
-
-
----
-name: TOC
-
 # Today's Workshop
 
 .left-column[
 
 <br />
-
-
 
 
 ]
@@ -102,6 +83,50 @@ name: TOC
 + ### Different levels
 
 ---
+
+
+# dɪˈplɔɪmənt
+
+
+<br /> 
+
+### <h3 align="center">Web deployment is the process of deploying the code (html, python, javascript, **R**, etc... ) from **your** machine to a **hosting** platform. </h3>
+
+<br />
+ 
+<center><img src="https://media.tenor.com/KjJTBQ9lftsAAAAC/why-huh.gif" alt="But Why" height="200px" /></center>
+
+
+
+---
+name: WHY
+
+# Why ?
+
+
+.right-column[
++ ### Transparency
+{{content}}
+
+]
+
+--
+
++ ### Shareability
+{{content}}
+
+--
+
++ ### Reproducibility 
+{{content}}
+
+--
+
++ ### Availability
+
+
+
+---
 class: inverse center middle
 
 # Version Control - Git
@@ -117,8 +142,7 @@ class: inverse center middle
 </footnotes>
 
 
-.left-column2[
-
+.left-column[
 <br />
 
 ## You don't need to use it...
@@ -127,18 +151,18 @@ class: inverse center middle
 ### But you should...
 <br />
 
-#### `But suit yourself!`
-<br />
 
-##### `But you are gonna regret it if you don't`
+##### `But you are gonna regret it if you don't ...`
 ]
 
 
-.right-column2[
+.right-column[
 
-<br /><br /><br /><br /><br />
+# <h1 align="center"> Version Control
 
-<center><img src="https://octodex.github.com/images/labtocat.png" alt="GithHub Octocat" width="600px" /></center>
+<br /><br /><br />
+
+<center><img src="https://danielkorn.io/images/vc-xkcd.jpg" alt="GithHub Octocat" width="600px" /></center>
 
 ]
 
@@ -317,18 +341,22 @@ class: inverse center middle
 </footnotes>
 
 
-<br />
-
+.left-column4[
+<br /><br />
 ## Now we wait...
 <br />
 
 
-### Let every body catch up 
 
+### Let every body catch up 
+]
+
+.right-column4[
 <br />
 
-<center><img src="./R-Lunch_files/img/loading.png" alt="Job Loading" width="600px" /></center>
 
+<center><img src="https://imgs.xkcd.com/comics/compiling.png" alt="Job Loading" width="600px" /></center>
+]
 
 
 
