@@ -355,14 +355,14 @@ class: inverse center middle
 <br />
 
 
-<center><img src="https://imgs.xkcd.com/comics/compiling.png" alt="Job Loading" width="600px" /></center>
+<center><img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*aDlEr5OL0Q6qFRqlVs6TAA.png" alt="Job Loading" width="600px" /></center>
 ]
 
 
 
 ---
 
-# Check out your Personal Page !
+# Check out your Personal Web Page !
 
 <footnotes align="center">
 
@@ -399,8 +399,8 @@ class: inverse center middle
 {{content}}
 --
 <br /> 
-+ #### Here you go, you're a Full Stack Web Developer now !
---
++ #### Here you go, now you can call yourself a **Full Stack Web Developer**  !
+
 
 ---
 
@@ -449,18 +449,13 @@ class: inverse center middle
 {{content}}
 --
 <br /> 
-+ #### For those who are already a bit comfortable with Shiny and or Echarts4r
++ #### For those **who want to try cool stuuf**
 
-You can go to []()
-{{content}}
---
-<br /> 
-+ #### Here you go, you're a Full Stack Web Developer now !
---
+  + You can go to [this link](https://raw.githubusercontent.com/we-data-ch/Web_Deployment_With_R/main/app.R) to copy paste the code and try for yourself.
+
 
 
 ---
-
 
 
 class: inverse center middle
@@ -468,6 +463,64 @@ class: inverse center middle
 # Posit Cloud
 
 ![](https://posit.cloud/images/posit-cloud.jpg)
+
+---
+
+# Share it to the world 
+
+<footnotes align="center">
+
+ Version Control  -   Github Pages  -   Shiny Apps   - <strong> Posit Cloud </strong>
+
+</footnotes>
+
+
+<br /> 
+
+<br />
+ 
+<center><img src="https://www.saaspegasus.com/static/images/web/deployment/runs-great-meme.7cf941cbffbf.jpg" alt="But Why" width="400px" /></center>
+
+---
+
+
+# Submit it to Posit Cloud
+
+<footnotes align="center">
+
+ Version Control  -   Github Pages  -   Shiny Apps   - <strong> Posit Cloud </strong>
+
+</footnotes>
+
+
+
+.left-column2[
+
++ #### [Posit Signup](https://www.shinyapps.io/admin/#/login)
+{{content}}
+
+]
+
+.right-column2[
+
+<center><img src="./R-Lunch_files/img/shinyapp.png" alt="new page" width="275px" /></center>
+
+<br /> 
+
+<center><img src="./R-Lunch_files/img/run.png" alt="new page" width="275px" /></center>
+
+
+]
+
+--
+<br /> 
++ #### You can play around and click on **Run App** to test it
+{{content}}
+--
+<br /> 
++ #### For those **who want to try cool stuuf**
+
+  + You can go to [this link](https://raw.githubusercontent.com/we-data-ch/Web_Deployment_With_R/main/app.R) to copy paste the code and try for yourself.
 
 
 
