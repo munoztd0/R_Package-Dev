@@ -241,18 +241,12 @@ class: inverse center middle
 
 # Very Simple Way to Host You Reports - 2
 
-<footnotes align="center">
-
- Version Control  -  <strong> Github Pages </strong>  -  Shiny Apps - Posit Cloud 
-
-</footnotes>
-
 
 
 .left-column2[
 
 + #### Rename the \*.html file that you just created **index.html**
-  - You can name it whatever you like really but it just make things simpler
+  - You can name it whatever you like really but then in the **https://<yourUserName>.github.io/<yourRepoName>/** link you will have to add the name of your file, i.e. if my **.html** file is called **Report.html**, I will have to go to **https://<yourUserName>.github.io/<yourRepoName>/Report.html**
 {{content}}
 
 ]
@@ -278,17 +272,14 @@ class: inverse center middle
 + #### Click on the **New** button (the green one on the top right)
 {{content}}
 --
-+ #### Name it **R Lunch** or whatever...
-{{content}}
---
-+ #### Make sure it's **public**
++ #### Name it **R Lunch** or whatever... and make sure it's **public**
 {{content}}
 --
 + #### Click on **create repository** | Bravo ! (if you just create your first repository)
 {{content}}
 --
 + #### And click on **uploading an existing file** and choose the **index.html** file
-
+ - Of course this can be done **via git** by just pushing your changes to GitHub
 
 ---
 
@@ -468,9 +459,9 @@ class: inverse center middle
 {{content}}
 --
 <br /> 
-+ #### For those **who want to try cool stuf**
++ #### For those **who want to try cool stuff**
 
-  + You can go to [this link](https://raw.githubusercontent.com/we-data-ch/Web_Deployment_With_R/main/app.R) to copy paste the code and try for yourself.
+  + You can go to [this link](https://raw.githubusercontent.com/we-data-ch/Web_Deployment_With_R/main/First/app.R) to copy paste the code and try for yourself.
 
 
 
@@ -655,6 +646,8 @@ Slides created via the R packages:
 
 [**xaringan**](https://github.com/yihui/xaringan)  and <br>
 [**xaringanthemer**](https://github.com/gadenbuie/xaringanthemer)
+
+Credit for all the comic goes to **Randall Munroe**
 
 
 ---
