@@ -484,7 +484,7 @@ class: inverse center middle
 ---
 
 
-# Submit it to Posit Cloud
+# Set Up Posit Cloud
 
 <footnotes align="center">
 
@@ -492,44 +492,144 @@ class: inverse center middle
 
 </footnotes>
 
+.small_scroll[
+```{r echo=TRUE, eval=FALSE}
+#First you need to install rsconnect!
+install.packages('rsconnect')
 
+#then just paste the info
+rsconnect::setAccountInfo(name='munoztd0', token='E209F672860611DB7F94A1F029836E02', secret='<SECRET>')
+```
+
+]
 
 .left-column2[
 
-+ #### [Posit Signup](https://www.shinyapps.io/admin/#/login)
++ #### [Signup to Posit](https://www.shinyapps.io/admin/#/login)
 {{content}}
 
 ]
 
 .right-column2[
 
-<center><img src="./R-Lunch_files/img/shinyapp.png" alt="new page" width="275px" /></center>
+<br />  <br /> 
+
+<center><img src="./R-Lunch_files/img/copy.png" alt="new page" width="375px" /></center>
 
 <br /> 
 
-<center><img src="./R-Lunch_files/img/run.png" alt="new page" width="275px" /></center>
-
-
-]
+ ]
 
 --
 <br /> 
-+ #### You can play around and click on **Run App** to test it
++ #### Install **{rsconnect}**
 {{content}}
 --
 <br /> 
-+ #### For those **who want to try cool stuuf**
++ #### Authorize account -> Click **on copy to clipboard** and paste it into console
 
-  + You can go to [this link](https://raw.githubusercontent.com/we-data-ch/Web_Deployment_With_R/main/app.R) to copy paste the code and try for yourself.
+---
 
+
+# Submit Your App
+
+<footnotes align="center">
+
+ Version Control  -   Github Pages  -   Shiny Apps   - <strong> Posit Cloud </strong>
+
+</footnotes>
+
+.small_scroll[
+```{r echo=TRUE, eval=FALSE}
+#make sure you know where the app folder is and where you are
+getwd() #setwd("rootFolder")
+
+#then just point to the app folder and give it a name
+rsconnect::deployApp("./First", appName = "MyCoolAppName")
+```
+
+]
+
+.left-column2[
+
++ #### Make sure you are in the right folder
+{{content}}
+
+]
+
+.right-column2[
+
+<br />  <br /> 
+
+<center><img src="https://imgs.xkcd.com/comics/python_environment_2x.png" alt="new page" width="375px" /></center>
+
+<br /> 
+
+ ]
+
+--
+<br /> 
++ #### Find a cool name and **deploy** !
+{{content}}
+--
+<br /> 
++ #### Here you go, now you can call yourself a **Full Stack App Developer**  !
+
+
+---
+
+# Examples
+
+<br />
+
+- #### [Workshops](https://munoztd0.github.io/Response_work1/) 
+
+- #### [Tutorials](https://munoztd0.github.io/Hitchhikers_guide_to_the_brain/install)
+
+- #### [Slides](https://munoztd0.github.io/Hitchhikers_guide_to_the_brain/install)
+
+<br />
+<br />
+
+Of course many alternatives to GitHub: [Gitlab](https://gitlab.com/users/sign_in), [Atlassian Bitbucket](https://id.atlassian.com/login?)
 
 
 ---
 class: center, middle
 
+
 # Thanks!
+
+
+<a href="mailto:david.munoz@mailbox.org">
+.white[`r icons::icon_style(icons::fontawesome("paper-plane"), fill = "white")` david.munoz@mailbox.org]
+</a>
+
+<a href="https://github.com/we-data-ch/Web_Deployment_With_R">
+.white[`r icons::icon_style(icons::fontawesome("link"), fill = "white")` This presentation]
+</a>
+
+<a href="http://twitter.com/tord_munoz">
+.white[`r icons::icon_style(icons::fontawesome("twitter"), fill = "white")` @tord_munoz]
+</a>
+
+<a href="https://github.com/munoztd0">
+.white[`r icons::icon_style(icons::fontawesome("github"), fill = "white")` @munoztd0]
+</a>
+
+<a href="https://www.youtube.com/channel/UCGktdbvbc_H-JEkYYTvwRVw">
+.white[`r icons::icon_style(icons::fontawesome("youtube"), fill = "white")` We Data YouTube]
+</a>
+
+<br><br><br>
 
 Slides created via the R packages:
 
-[**xaringan**](https://github.com/yihui/xaringan)<br>
-[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+[**xaringan**](https://github.com/yihui/xaringan)  and <br>
+[**xaringanthemer**](https://github.com/gadenbuie/xaringanthemer)
+
+
+
+
+
+
