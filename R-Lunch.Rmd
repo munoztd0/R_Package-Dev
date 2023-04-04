@@ -51,26 +51,23 @@ footnotes {
 
 
 
-# Today's Workshop
+# <h1 align="center"> Today's Workshop
 
-.left-column[
-
-<br />
-
-
-]
+.right-column9[
 
 
 
-.right-column[
 + ### Interactive
+
+  + https://we-data-ch.github.io/Web_Deployment_With_R/R-Lunch
+
 {{content}}
 
 ]
 
 --
 
-+ ### Just the tip of the iceberg
++ ### Overview - Just the tip of the iceberg
 {{content}}
 
 --
@@ -240,8 +237,6 @@ class: inverse center middle
 
 
 
-
-
 ---
 
 # Very Simple Way to Host You Reports - 2
@@ -257,6 +252,7 @@ class: inverse center middle
 .left-column2[
 
 + #### Rename the \*.html file that you just created **index.html**
+  - You can name it whatever you like really but it just make things simpler
 {{content}}
 
 ]
@@ -292,7 +288,7 @@ class: inverse center middle
 {{content}}
 --
 + #### And click on **uploading an existing file** and choose the **index.html** file
---
+
 
 ---
 
@@ -330,7 +326,7 @@ class: inverse center middle
 --
 <br /> 
 + #### Finally just press on **Save**
---
+
 
 ---
 
@@ -404,6 +400,29 @@ class: inverse center middle
 
 ---
 
+# <h1 align="center"> Examples
+
+.left-column4[
+
+- ### [Slides](https://we-data-ch.github.io/Web_Deployment_With_R/R-Lunch)
+
+- ### [Books](https://bookdown.org/yihui/rmarkdown/xaringan.html)
+
+- ### [Blogs](https://hugo-apero--elastic-saha-ddd0a2.netlify.app/blog/)
+]
+
+.right-column4[
+
+- ### [Analysis/Report](https://munoztd0.github.io/LIRA/) 
+
+- ### [Workshops](https://munoztd0.github.io/Response_work1) 
+
+- ### [Tutorials](https://munoztd0.github.io/Hitchhikers_guide_to_the_brain/install)
+
+
+]
+---
+
 
 class: inverse center middle
 
@@ -449,7 +468,7 @@ class: inverse center middle
 {{content}}
 --
 <br /> 
-+ #### For those **who want to try cool stuuf**
++ #### For those **who want to try cool stuf**
 
   + You can go to [this link](https://raw.githubusercontent.com/we-data-ch/Web_Deployment_With_R/main/app.R) to copy paste the code and try for yourself.
 
@@ -559,9 +578,9 @@ rsconnect::deployApp("./First", appName = "MyCoolAppName")
 
 .right-column2[
 
-<br />  <br /> 
+<br />  
 
-<center><img src="https://imgs.xkcd.com/comics/python_environment_2x.png" alt="new page" width="375px" /></center>
+<center><img src="https://imgs.xkcd.com/comics/python_environment_2x.png" alt="new page" width="475px" /></center>
 
 <br /> 
 
@@ -578,21 +597,30 @@ rsconnect::deployApp("./First", appName = "MyCoolAppName")
 
 ---
 
-# Examples
+# <h1 align="center"> Examples
 
-<br />
+.left-column4[
 
-- #### [Workshops](https://munoztd0.github.io/Response_work1/) 
+- ### [Dataset Explorer](https://munoztd0.shinyapps.io/DbViewer/) 
+  - username = user1 | password = pass1
 
-- #### [Tutorials](https://munoztd0.github.io/Hitchhikers_guide_to_the_brain/install)
+- ### [Interactive Tutorials](https://munoztd0.shinyapps.io/Tuto_learnR_Data_Viz/) 
 
-- #### [Slides](https://munoztd0.github.io/Hitchhikers_guide_to_the_brain/install)
+- ### [Analysis Tools](https://johncoene.shinyapps.io/chirp_demo/)
+  - JP Coene - Twitter Network Explorer
+  
+]
 
-<br />
-<br />
+.right-column4[
 
-Of course many alternatives to GitHub: [Gitlab](https://gitlab.com/users/sign_in), [Atlassian Bitbucket](https://id.atlassian.com/login?)
 
+- ### [Analysis Tools](https://haozhu233.shinyapps.io/shinyMRI-contest/)
+  - Visualizing 3D/4D medical imaging data
+  
+- ### [Cool Stuff](https://connect.thinkr.fr/hexmake/)
+  - Build your Own Hex Sticker
+
+]
 
 ---
 class: center, middle
@@ -629,6 +657,41 @@ Slides created via the R packages:
 [**xaringanthemer**](https://github.com/gadenbuie/xaringanthemer)
 
 
+---
+
+# <h1 align="center"> To Go Deeper
+
+.left-column4[
+
+- ### [Set Up GitHub and Rstudio](https://happygitwithr.com/ssh-keys.html)
+
+- ### [Writing R Markdown documents](https://github.com/juliasilge/presentations/blob/master/2021-11-20-Portfolio_Website_Tutorial/Website_Tutorial_2021-11-20.pptx.pdf) 
+
+- ### [How to R Blogdown](https://blogdown-demo.rbind.io/)
+
+- ### [Learning R Shiny](https://shiny.rstudio.com/articles/build.html)
+
+- ### [Creating Interactive Tutorials](https://rstudio.github.io/learnr/articles/learnr.html)
+
+  
+]
+
+.right-column4[
+
+
+- ### [Posit Cloud Deployment](https://posit.cloud/learn/guide)
+  
+- ### [GitHub CLI](https://cli.github.com/manual/installation)
+
+- ### [Making {xaringan} Slides](https://bookdown.org/yihui/rmarkdown/xaringan.html)
+
+- ### [RMarkdown Tips for Reports](https://munoztd0.github.io/DAP_2021/RESOURCES/Rmardkown_tips_and_tricks.html)
+
+- ### [GitHub Actions for R](https://www.tidyverse.org/blog/2022/06/actions-2-0-0/)
+
+
+
+]
 
 
 
