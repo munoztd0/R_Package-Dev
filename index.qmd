@@ -1,0 +1,240 @@
+---
+title: Building a R Package
+subtitle: From Scripts to Standardized Open-Source Tools
+format:
+  clean-revealjs:
+    self-contained: true
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+author:
+  - name: David Munoz Tord - Senior R Developer
+    orcid: 0000-0001-7954-8295
+    email: david.tord@cytel.com
+    affiliations: Cytel FSP - Janssen
+date: last-modified
+---
+
+## Life in Pharma: Tables, Tables Everywhere
+
+![](img/tables.png)
+
+## `junco` as case study
+
+![](img/logo.png)
+
+::: notes
+I will use our junco package as an case study of R package devlopment for clinpharm
+:::
+
+
+## Challenges in Pharmaceutical Programming
+
+The pharmaceutical industry faces unique challenges in clinical and statistical programming:
+
+- **Implementing patterns** used across many table shells (developed by dedicated teams)
+- **Company-specific statistical methods** that need to be standardized
+- **Complex table structures** that must be consistent across studies
+- **Need for a core framework** that ensures all company shells can be created consistently
+
+## Shells Are Table Specific, Table Creation Is Not
+
+### The Junco Package Approach
+
+Our solution was to develop our own business logic framework for J&J table creation:
+
+![](img/graph1.png)
+
+::: notes
+We did something very similar to Roche's approach to build up on the core framework of rtables
+:::
+
+## Getting to Production
+
+The Junco package provides **key features** needed for production-ready clinical tables:
+
+- **True-type font support**: Word wrapping, pagination, and RTF export
+- **Higher order column counts**: Utilities for spanning column headers
+- **Guaranteed pathability in row space**
+- **Nearest-value (SAS-like) rounding support**: Maintaining consistency with existing processes
+- **Statistical calculations**: In accord with business logic
+- **Robust approach for risk diff columns**
+
+::: notes
+ I will not go to deep into it but let me know if you want ot know more about it
+:::
+
+
+
+# From Scripts to Standardized Tools {background-color="#40666e"}
+
+::::{.callout-note}
+## Industry Benefits
+
+Creating internal R packages helps pharmaceutical companies:
+- Maintain consistency across studies and therapeutic areas
+- Reduce time spent on repetitive coding tasks
+- Improve compliance with regulatory standards
+- Facilitate knowledge transfer between team members
+::::
+
+## Code Design and API for Users
+
+Once we had the core functionality working, we needed to focus on:
+
+- **User-friendly API**: Creating intuitive functions that match users' mental models
+- **Consistent interfaces**: Ensuring functions work together seamlessly
+- **Clear documentation**: Making the package accessible to non-developers
+- **Comprehensive testing**: Validating functionality across different scenarios
+- **Continuous integration**: Automating quality checks and deployment
+- **Version control**: Managing changes and updates systematically
+
+## Documentation: Making Your Package Accessible
+
+### Using roxygen2 and pkgdown
+
+Documentation is critical for package adoption and proper use:
+
+1. **roxygen2 for function documentation**:
+   ```r
+   #' Calculate risk difference with confidence intervals
+   #' 
+   #' @param group1 Vector of outcomes for first group
+   #' @param group2 Vector of outcomes for second group
+   #' @param conf.level Confidence level (default: 0.95)
+   #' @return A list with risk difference and confidence intervals
+   #' @export
+   risk_diff <- function(group1, group2, conf.level = 0.95) {
+     # Function implementation
+   }
+   ```
+
+2. **pkgdown for website generation**:
+   ```r
+   usethis::use_pkgdown()
+   pkgdown::build_site()
+   ```
+
+<iframe src="https://johnsonandjohnson.github.io/junco/" width="100%" height="400px"></iframe>
+
+## Ensuring Package Quality
+
+### Unit Testing and Validation
+
+Quality assurance is essential for pharmaceutical applications:
+
+- **Unit tests**: Verify each function works as expected
+- **Integration tests**: Ensure components work together correctly
+- **Regression tests**: Prevent reintroduction of fixed bugs
+- **Validation documentation**: Meet regulatory requirements
+
+<iframe src="https://johnsonandjohnson.github.io/junco/unit-test-report-non-cran/" width="100%" height="400px"></iframe>
+
+::::{.callout-tip}
+## Tip for Pharmaceutical Validation
+
+Include detailed information about validation status and intended use cases to help users understand if the package meets their regulatory requirements.
+::::
+
+## Continuous Integration and Deployment
+
+### Automating Quality Checks
+
+CI/CD reduces manual work while improving quality:
+
+- **Automated testing**: Run tests on every code change
+- **Code coverage**: Ensure comprehensive test coverage
+- **Style checking**: Maintain consistent coding standards
+- **Documentation building**: Keep documentation in sync with code
+
+<iframe src="https://github.com/johnsonandjohnson/junco/pull/53/checks" width="100%" height="400px"></iframe>
+
+## Dependency Management
+
+### Balancing Functionality and Stability
+
+Managing dependencies is critical for long-term maintenance:
+
+- **Minimize external dependencies** when possible
+- **Specify version requirements** for critical dependencies
+- **Consider internal functions** instead of importing from less stable packages
+- **Document dependency rationale** for future maintainers
+
+# Advanced Topics {background-color="#40666e"}
+
+## Version Control and Collaboration
+
+### Best Practices for Team Development
+
+Effective collaboration requires good processes:
+
+- **Semantic versioning**: Major.Minor.Patch format
+- **Git branching strategy**: Feature branches and pull requests
+- **Code review**: Ensure quality and knowledge sharing
+- **Issue tracking**: Document bugs and feature requests
+
+## Internal vs. CRAN Packages
+
+### Choosing the Right Distribution Method
+
+Different distribution methods serve different needs:
+
+- **Internal packages**: Company-specific methods, proprietary algorithms
+- **CRAN packages**: General-purpose tools, widely applicable methods
+- **GitHub packages**: Community collaboration, rapid development
+
+::::{.callout-note}
+## Pharmaceutical Considerations
+
+Internal packages often contain proprietary methods or company-specific workflows that shouldn't be publicly shared, while more general statistical methods may benefit from community review through CRAN or GitHub distribution.
+::::
+
+## Case Study: Clinical Trial Analysis Package
+
+### From Scripts to Package
+
+Example transformation of repetitive clinical trial analysis scripts:
+
+1. **Identify common functions** across multiple studies
+2. **Standardize input/output formats**
+3. **Create consistent documentation**
+4. **Implement validation tests**
+5. **Deploy to internal repository**
+
+## Summary
+
+### Key Takeaways
+
+- R packages provide a **structured framework** for organizing code
+- They **improve reproducibility** and **reduce errors**
+- **Documentation and testing** are essential components
+- Packages can **streamline workflows** in pharmaceutical research
+- The investment in package development **pays off** through reuse and reliability
+
+## Resources
+
+### The Junco Package
+
+<div style="text-align: center;">
+  <img src="https://raw.githubusercontent.com/johnsonandjohnson/junco/dev/man/figures/logo.png" alt="Junco Logo" width="200"/>
+</div>
+
+- **Documentation**: [https://johnsonandjohnson.github.io/junco/](https://johnsonandjohnson.github.io/junco/)
+- **GitHub Repository**: [https://github.com/johnsonandjohnson/junco/](https://github.com/johnsonandjohnson/junco/)
+- **CRAN Page**: [Junco on CRAN (v0.1.1)](https://cran.r-project.org/package=junco)
+
+### Additional Resources
+
+- [R Packages (2e) by Hadley Wickham & Jenny Bryan](https://r-pkgs.org/)
+- [roxygen2 documentation](https://roxygen2.r-lib.org/)
+- [testthat for testing](https://testthat.r-lib.org/)
+- [GitHub Actions for R](https://github.com/r-lib/actions)
+
+## Q&A
+
+### Thank You!
+
+Contact information:
+- Email: [david.tord@cytel.com](mailto::david.tord@cytel.com)
+- This presentation: [https://github.com/munoztd0/R_Package-Dev `r icons::icon_style(icons::fontawesome("link"), fill = "white")`](https://github.com/munoztd0/R_Package-Dev)
+- GitHub:[munoztd0 `r icons::icon_style(icons::fontawesome("github"), fill = "white")`](https://github.com/munoztd0)
