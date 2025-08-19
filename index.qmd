@@ -127,7 +127,7 @@ pkgdown::build_site()
 
 ::: {.column width="40%"}
 
-<iframe src="https://johnsonandjohnson.github.io/junco/reference/a_freq_j.html"></iframe>
+<iframe src="https://johnsonandjohnson.github.io/junco/reference/a_freq_j.html" width="100%" height="400px"></iframe>
 :::
 ::::
 
