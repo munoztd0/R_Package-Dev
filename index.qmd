@@ -13,19 +13,22 @@ author:
     email: david.tord@cytel.com
     affiliations: Cytel FSP - Janssen
 date: last-modified
+execute:
+  cache: true
+  freeze: auto
 ---
 
 ## Life in Pharma: Tables, Tables Everywhere
 
-![](img/tables.png)
+![](img/tables.jpg)
 
 ## `junco` as case study
 
 ![](img/logo.png)
 
-::: notes
-I will use our junco package as an case study of R package devlopment for clinpharm
-:::
+:::: notes
+I will use our junco package as a case study of R package devlopment for clinpharm
+::::
 
 
 ## Challenges in Pharmaceutical Programming
@@ -41,13 +44,13 @@ The pharmaceutical industry faces unique challenges in clinical and statistical 
 
 ### The Junco Package Approach
 
-Our solution was to develop our own business logic framework for J&J table creation:
+Our solution was to develop our own business logic framework for J&J table creation
 
 ![](img/graph1.png)
 
-::: notes
+:::: notes
 We did something very similar to Roche's approach to build up on the core framework of rtables
-:::
+::::
 
 ## Getting to Production
 
@@ -60,23 +63,26 @@ The Junco package provides **key features** needed for production-ready clinical
 - **Statistical calculations**: In accord with business logic
 - **Robust approach for risk diff columns**
 
-::: notes
+:::: notes
  I will not go to deep into it but let me know if you want ot know more about it
-:::
+::::
 
 
 
-# From Scripts to Standardized Tools {background-color="#40666e"}
 
-::::{.callout-note}
+##  Creating the package {background-color="#40666e"}
+### From Scripts to Standardized Tools
+
+:::::{.callout-note}
 ## Industry Benefits
 
 Creating internal R packages helps pharmaceutical companies:
-- Maintain consistency across studies and therapeutic areas
-- Reduce time spent on repetitive coding tasks
-- Improve compliance with regulatory standards
-- Facilitate knowledge transfer between team members
-::::
+
+* Maintain consistency across studies and therapeutic areas
+* Reduce time spent on repetitive coding tasks
+* Improve compliance with regulatory standards
+* Facilitate knowledge transfer between team members
+:::::
 
 ## Code Design and API for Users
 
@@ -95,27 +101,35 @@ Once we had the core functionality working, we needed to focus on:
 
 Documentation is critical for package adoption and proper use:
 
+:::: {.columns}
+
+::: {.column width="60%"}
 1. **roxygen2 for function documentation**:
-   ```r
-   #' Calculate risk difference with confidence intervals
-   #' 
-   #' @param group1 Vector of outcomes for first group
-   #' @param group2 Vector of outcomes for second group
-   #' @param conf.level Confidence level (default: 0.95)
-   #' @return A list with risk difference and confidence intervals
-   #' @export
-   risk_diff <- function(group1, group2, conf.level = 0.95) {
-     # Function implementation
-   }
-   ```
+```r
+#' Calculate risk difference with confidence intervals
+#'
+#' @param group1 Vector of outcomes for first group
+#' @param group2 Vector of outcomes for second group
+#' @param conf.level Confidence level (default: 0.95)
+#' @return A list with risk difference and Cis
+#' @export
+risk_diff <- function(group1, group2, conf.level = 0.95) {
+ # Function implementation
+}
+```
 
 2. **pkgdown for website generation**:
-   ```r
-   usethis::use_pkgdown()
-   pkgdown::build_site()
-   ```
+```r
+usethis::use_pkgdown()
+pkgdown::build_site()
+```
+:::
 
-<iframe src="https://johnsonandjohnson.github.io/junco/" width="100%" height="400px"></iframe>
+::: {.column width="40%"}
+
+<iframe src="https://johnsonandjohnson.github.io/junco/reference/a_freq_j.html"></iframe>
+:::
+::::
 
 ## Ensuring Package Quality
 
@@ -123,18 +137,26 @@ Documentation is critical for package adoption and proper use:
 
 Quality assurance is essential for pharmaceutical applications:
 
+:::: {.columns}
+
+::: {.column width="60%"}
 - **Unit tests**: Verify each function works as expected
 - **Integration tests**: Ensure components work together correctly
 - **Regression tests**: Prevent reintroduction of fixed bugs
 - **Validation documentation**: Meet regulatory requirements
+:::
 
-<iframe src="https://johnsonandjohnson.github.io/junco/unit-test-report-non-cran/" width="100%" height="400px"></iframe>
+::: {.column width="40%"}
+<iframe src="https://johnsonandjohnson.github.io/junco/_xml_coverage_reports/coverage.html/" width="100%" height="400px"></iframe>
+:::
 
-::::{.callout-tip}
+::::
+
+:::::{.callout-tip}
 ## Tip for Pharmaceutical Validation
 
 Include detailed information about validation status and intended use cases to help users understand if the package meets their regulatory requirements.
-::::
+:::::
 
 ## Continuous Integration and Deployment
 
@@ -142,12 +164,20 @@ Include detailed information about validation status and intended use cases to h
 
 CI/CD reduces manual work while improving quality:
 
+:::: {.columns}
+
+::: {.column width="60%"}
 - **Automated testing**: Run tests on every code change
 - **Code coverage**: Ensure comprehensive test coverage
 - **Style checking**: Maintain consistent coding standards
 - **Documentation building**: Keep documentation in sync with code
+:::
 
+::: {.column width="40%"}
 <iframe src="https://github.com/johnsonandjohnson/junco/pull/53/checks" width="100%" height="400px"></iframe>
+:::
+
+::::
 
 ## Dependency Management
 
@@ -168,7 +198,7 @@ Managing dependencies is critical for long-term maintenance:
 
 Effective collaboration requires good processes:
 
-- **Semantic versioning**: Major.Minor.Patch format
+- **Semantic versioning**: Major.Minor.Patch format (`junco` v0.1.1)
 - **Git branching strategy**: Feature branches and pull requests
 - **Code review**: Ensure quality and knowledge sharing
 - **Issue tracking**: Document bugs and feature requests
@@ -183,11 +213,11 @@ Different distribution methods serve different needs:
 - **CRAN packages**: General-purpose tools, widely applicable methods
 - **GitHub packages**: Community collaboration, rapid development
 
-::::{.callout-note}
+:::::{.callout-note}
 ## Pharmaceutical Considerations
 
 Internal packages often contain proprietary methods or company-specific workflows that shouldn't be publicly shared, while more general statistical methods may benefit from community review through CRAN or GitHub distribution.
-::::
+:::::
 
 ## Case Study: Clinical Trial Analysis Package
 
@@ -211,30 +241,146 @@ Example transformation of repetitive clinical trial analysis scripts:
 - Packages can **streamline workflows** in pharmaceutical research
 - The investment in package development **pays off** through reuse and reliability
 
+## Demo: Creating Complex Tables with Junco
+
+### Table Creation Script
+
+```{r table-creation}
+#| echo: true
+#| code-fold: false
+#| code-overflow: scroll
+#| cache: true
+#| cache-lazy: false
+library(junco)
+library(dplyr)
+library(pharmaverseadamjnj)
+
+ADEG <- pharmaverseadamjnj::adeg |>
+  select(STUDYID, USUBJID, TRT01A, PARAM, AVISIT, AVAL, CHG) |>
+  filter(PARAM == "ECG Mean Heart Rate (beats/min)") |>
+
+  mutate(colspan_trt = factor(
+    if_else(TRT01A == "Placebo", " ", "Active Study Agent"),
+    levels = c("Active Study Agent", " ")
+  )) |>
+
+  mutate(rrisk_header = "Risk Difference (%) (95% CI)") |>
+  mutate(rrisk_label = paste(TRT01A, paste("vs", "Placebo")))
+
+colspan_trt_map <- create_colspan_map(ADEG,
+  non_active_grp = "Placebo",
+  non_active_grp_span_lbl = " ",
+  active_grp_span_lbl = "Active Study Agent",
+  colspan_var = "colspan_trt",
+  trt_var = "TRT01A"
+)
+ref_path <- c("colspan_trt", " ", "TRT01A", "Placebo")
+
+lyt <- basic_table() |>
+  split_cols_by(
+    "colspan_trt",
+    split_fun = trim_levels_to_map(map = colspan_trt_map)
+  ) |>
+  split_cols_by("TRT01A") |>
+  split_rows_by(
+    "PARAM",
+    label_pos = "topleft",
+    split_label = "Blood Pressure",
+    section_div = " ",
+    split_fun = drop_split_levels
+  ) |>
+  split_rows_by(
+    "AVISIT",
+    label_pos = "topleft",
+    split_label = "Study Visit",
+    split_fun = drop_split_levels,
+    child_labels = "hidden"
+  ) |>
+  split_cols_by_multivar(
+    c("AVAL", "AVAL", "CHG"),
+    varlabels = c("n/N (%)", "Mean (CI)", "CFB (CI)")
+  ) |>
+  split_cols_by("rrisk_header", nested = FALSE) |>
+  split_cols_by(
+    "TRT01A",
+    split_fun = remove_split_levels("Placebo"),
+    labels_var = "rrisk_label"
+  ) |>
+  split_cols_by_multivar(c("CHG"), varlabels = c(" ")) |>
+  analyze("STUDYID",
+    afun = a_summarize_aval_chg_diff_j,
+    extra_args = list(
+      format_na_str = "-", d = 0,
+      ref_path = ref_path, variables = list(arm = "TRT01A", covariates = NULL)
+    )
+  )
+
+result <- build_table(lyt, ADEG)
+```
+
+## Rendered Table Output
+
+```{r table-output}
+#| echo: true
+#| cache: true
+rtables.officer::tt_to_flextable(result)
+```
+
 ## Resources
 
-### The Junco Package
+
+:::: {.columns}
+
+::: {.column width="30%"}
 
 <div style="text-align: center;">
   <img src="https://raw.githubusercontent.com/johnsonandjohnson/junco/dev/man/figures/logo.png" alt="Junco Logo" width="200"/>
 </div>
-
-- **Documentation**: [https://johnsonandjohnson.github.io/junco/](https://johnsonandjohnson.github.io/junco/)
-- **GitHub Repository**: [https://github.com/johnsonandjohnson/junco/](https://github.com/johnsonandjohnson/junco/)
-- **CRAN Page**: [Junco on CRAN (v0.1.1)](https://cran.r-project.org/package=junco)
-
-### Additional Resources
+:::
+::: {.column width="70%"}
 
 - [R Packages (2e) by Hadley Wickham & Jenny Bryan](https://r-pkgs.org/)
 - [roxygen2 documentation](https://roxygen2.r-lib.org/)
 - [testthat for testing](https://testthat.r-lib.org/)
 - [GitHub Actions for R](https://github.com/r-lib/actions)
+:::
 
-## Q&A
+::::
+## Q&A {background-color="#40666e"}
 
-### Thank You!
+:::: {.columns}
 
-Contact information:
-- Email: [david.tord@cytel.com](mailto::david.tord@cytel.com)
-- This presentation: [https://github.com/munoztd0/R_Package-Dev `r icons::icon_style(icons::fontawesome("link"), fill = "white")`](https://github.com/munoztd0/R_Package-Dev)
-- GitHub:[munoztd0 `r icons::icon_style(icons::fontawesome("github"), fill = "white")`](https://github.com/munoztd0)
+::: {.column width="60%"}
+### Thank You for Your Attention!
+
+<div style="margin-top: 20px;">
+Have questions about R package development or the Junco package?
+
+Feel free to reach out using the contact information provided.
+</div>
+
+
+:::
+
+::: {.column width="40%"}
+<div style="background-color: #f5f5f5; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+### Contact Information
+
+<ul style="list-style-type: none; padding-left: 0;">
+  <li style="margin-bottom: 15px;">
+    <i class="fa fa-envelope" style="color: #40666e;"></i>
+    Email: [david.tord@cytel.com](mailto::david.tord@cytel.com)
+  </li>
+  <li style="margin-bottom: 15px;">
+    <i class="fa fa-link" style="color: #40666e;"></i>
+    Presentation: [github.com/munoztd0/R_Package-Dev `r icons::icon_style(icons::fontawesome("link"), fill = "#40666e")`](https://github.com/munoztd0/R_Package-Dev)
+  </li>
+  <li style="margin-bottom: 15px;">
+    <i class="fa fa-github" style="color: #40666e;"></i>
+    GitHub: [munoztd0 `r icons::icon_style(icons::fontawesome("github"), fill = "#40666e")`](https://github.com/munoztd0)
+  </li>
+</ul>
+</div>
+:::
+
+::::

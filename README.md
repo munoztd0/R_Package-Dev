@@ -40,3 +40,5 @@ Web Iframes need:
 ::: notes
 My audience can't read this but I do.
 :::
+
+Creating internal R packages helps pharmaceutical companies: * Maintain consistency across studies and therapeutic areas * Reduce time spent on repetitive coding tasks * Improve compliance with regulatory standards * Facilitate knowledge transfer between team members
