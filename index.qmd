@@ -1,5 +1,5 @@
 ---
-title: Building a R Package
+title: Building an R Package
 subtitle: From Scripts to Standardized Open-Source Tools
 format:
   clean-revealjs:
@@ -126,8 +126,7 @@ pkgdown::build_site()
 :::
 
 ::: {.column width="40%"}
-
-<iframe src="https://johnsonandjohnson.github.io/junco/reference/a_freq_j.html" width="100%" height="400px"></iframe>
+<iframe src="https://johnsonandjohnson.github.io/junco/reference/index.html" width="100%" height="400px"></iframe>
 :::
 ::::
 
@@ -147,7 +146,7 @@ Quality assurance is essential for pharmaceutical applications:
 :::
 
 ::: {.column width="40%"}
-<iframe src="https://johnsonandjohnson.github.io/junco/_xml_coverage_reports/coverage.html/" width="100%" height="400px"></iframe>
+<iframe src="https://johnsonandjohnson.github.io/junco/_xml_coverage_reports/coverage.html" width="100%" height="400px"></iframe>
 :::
 
 ::::
