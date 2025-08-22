@@ -11,9 +11,12 @@ author:
   - name: David Munoz Tord - Senior R Developer
     orcid: 0000-0001-7954-8295
     email: david.tord@cytel.com
-    affiliations: Cytel FSP - Janssen
+    affiliations: Cytel FSP - Johnson & Johnson Innovative Medicine
 date: last-modified
 execute:
+  eval: true
+  echo: true
+  output: true
   cache: true
   freeze: auto
 ---
@@ -21,6 +24,10 @@ execute:
 ## Life in Pharma: Tables, Tables Everywhere
 
 ![](img/tables.jpg)
+
+::::: notes
+- Opportunity for automation
+:::::
 
 ## Case Study: `junco` Clinical Trial Analysis Package
 
@@ -55,6 +62,14 @@ I will use our junco package as a case study of R package devlopment for clinpha
 
 ## Challenges in Pharmaceutical Programming
 
+:::::: notes
+- Regulatory requirements create unique challenges
+- Consistency across studies critical
+- Statistical methods often company-specific
+- Standardization reduces errors
+- Opportunity for R packages to solve these problems
+::::::
+  -
 The pharmaceutical industry faces unique challenges in clinical and statistical programming:
 
 - **Implementing patterns** used across many table shells (developed by dedicated teams)
@@ -65,6 +80,8 @@ The pharmaceutical industry faces unique challenges in clinical and statistical 
 . . .
 
 - → that where I step in !
+
+
 
 ## Shells Are Table Specific, Table Creation Is Not
 
@@ -92,13 +109,37 @@ The Junco package provides **key features** needed for production-ready clinical
 - **Robust approach for risk diff columns**
 
 :::: notes
- I will not go to deep into it but let me know if you want ot know more about it
+Identifying key features to provide and solving those problems was a big part of my work but
+ I will not go to deep into it but let me know if you want ot know more about it and we will se soem of those feature in demon at the end
 ::::
 
 
 
+## Limitations of Script-Based Solutions
+
+- **Poor portability**: Hardcoded paths and environment-specific settings
+- **Code duplication**: Functions often copied across multiple scripts
+- **Reload overhead**: Need to source entire scripts even when only one function is needed
+- No tools for **documentation**, **testing** and **difficult version tracking**
+
+:::::{.callout-note}
+## Impact on Productivity
+When standardized code is distributed as scripts, users spend significant time troubleshooting environment issues, manually tracking versions, and repeatedly reloading large files for small changes.
+:::::
+
+::::: notes
+
+Caveats of Shipping Standardized Code as Scripts
+Scripts are often the starting point for many R users, especially in pharma where SAS scripts have been the norm. However, as analyses become more complex and need to be shared across teams or studies, the limitations of scripts become apparent. Packages provide a structured solution to all these problems - they have formal documentation systems, dependency management, built-in testing frameworks, and proper versioning.
+:::::
 
 ##  Creating the package {background-color="#40666e"}
+
+:::::: notes
+Creating R packages helps pharmaceutical companies:
+- with - consistency, efficiency, compliance
+and facilitate knowledge transfer between users
+::::::
 
 <br>
 
@@ -109,7 +150,7 @@ The Junco package provides **key features** needed for production-ready clinical
 :::::{.callout-note}
 ## Industry Benefits
 
-Creating R packages helps pharmaceutical companies:
+
 
 * Maintain consistency across studies and therapeutic areas
 * Reduce time spent on repetitive coding tasks
@@ -142,13 +183,12 @@ API design is one of the most critical and challenging aspects of writing good c
 :::::
 
 ::::: notes
+A big challenge for every wirting code for programmers is the design API
 - **Breaking changes**: Once users adopt your functions, changing parameter names or return structures can break their code.
 - **Function naming consistency**: Inconsistent naming patterns create cognitive load. Example: mixing verb-noun (`calculate_risk()`) with noun-verb (`risk_calculate()`) patterns confuses users. example the tidyverse prefixing
 - **Parameter consistency**: Using different parameter names for the same concept across functions creates confusion. Example: `treatment_group` in one function but `trt_grp` in another.
 - **Future extensibility**: Adding new features later often requires foresight in initial design. Example: A simple `plot_data()` function might need to evolve to support multiple visualization types, requiring a complete redesign if not initially structured to accommodate this.
 - **Backward compatibility**: As your package evolves, maintaining support for older function calls becomes increasingly difficult without initial planning. Example: The `dplyr` package maintaining both old and new verb forms during transitions.
-
-- **Discoverability**: Functions should be organized in a way that makes related functionality easy to find. Example: Using consistent prefixes like `tbl_*` for all table-related functions.
 
 Investing time in thoughtful API design upfront saves enormous effort later and prevents user frustration when your package evolves.
 :::::
@@ -204,12 +244,36 @@ Quality assurance is essential for pharmaceutical applications:
 :::: {.columns}
 
 ::: {.column width="50%"}
-- **Unit tests**: Verify each function works as expected  -> [Example](https://github.com/johnsonandjohnson/junco/blob/26e7c3470e40f2e2564ba5c0aa58902ce518de06/tests/testthat/test-pruning_functions.R#L23)
+- **Unit tests**: Verify each function works as expected
+- **Code coverage**: Metric that measures the percentage of your application's code executed by your tests: [junco's coverage](https://github.com/johnsonandjohnson/junco/blob/26e7c3470e40f2e2564ba5c0aa58902ce518de06/tests/testthat/test-pruning_functions.R#L23)
 - **Integration tests**: Ensure components work together correctly
 :::
 
 ::: {.column width="50%"}
-<iframe src="https://johnsonandjohnson.github.io/junco/_xml_coverage_reports/coverage.html" width="100%" height="400px" data-external="1"></iframe>
+
+```{r, unit-test}
+#| echo: true
+#| eval: true
+#| output: true
+#| code-fold: false
+#| code-overflow: scroll
+#| cache: true
+#| cache-lazy: false
+# Basic unit testing example
+add_values <- function(x, y) {
+  return(x + y)
+}
+
+library(testthat)
+
+test_that("1: addition works", {
+  expect_equal(add_values(2, 2), 4)
+})
+
+test_that("2: we do expected an error", {
+   expect_error(add_values("a", 1))
+})
+```
 :::
 
 ::::
@@ -252,6 +316,15 @@ Continuous integration: Automating quality checks and deployment, save a extreme
 
 ### Best Practices for Team Development
 
+::::: notes
+- Semantic versioning - communicate breaking changes
+- Git branching - isolate features, maintain stable main branch
+- Code review - catch bugs early, share knowledge
+- Issue tracking - prioritize work, document decisions
+- Dependency management - critical for long-term maintenance
+- Team workflows - establish clear contribution guidelines
+:::::
+
 Effective collaboration requires good processes:
 
 - **Semantic versioning**: Major.Minor.Patch format (`junco` v0.1.1)
@@ -267,6 +340,14 @@ Managing dependencies is critical for long-term maintenance:
 ## Internal vs. External Packages
 
 ### Choosing the Right Distribution Method
+
+::::::: notes
+- Distribution strategy depends on content sensitivity
+- Internal: proprietary methods, company-specific workflows
+- GitHub: faster feedback, community contributions
+- CRAN: wider adoption, stricter quality standards
+- Consider validation requirements for each approach
+:::::::
 
 Different distribution methods serve different needs:
 
@@ -304,8 +385,18 @@ For example we work a lot with Roche's OS team and release are tested in common 
 
 ### Table Creation Script
 
+::::::: notes
+- Live code demonstration of package capabilities
+- Key functions: split_cols_by, split_rows_by, analyze
+- Data preparation and transformation steps
+- Table layout definition process
+- Analysis function application
+:::::::
+
 ```{r table-creation}
 #| echo: true
+#| eval: true
+#| output: true
 #| code-fold: false
 #| code-overflow: scroll
 #| cache: true
@@ -379,8 +470,18 @@ result <- build_table(lyt, ADEG)
 
 ## Rendered Table Output
 
+::::::: notes
+- Final output visualization
+- Professional-quality tables for reports
+- Formatting consistent with regulatory requirements
+- Exportable to various formats (RTF, PDF, HTML)
+- Compare with traditional SAS output
+:::::::
+
 ```{r table-output}
 #| echo: true
+#| eval: true
+#| output: true
 #| cache: true
 rtables.officer::tt_to_flextable(result)
 ```
@@ -388,6 +489,14 @@ rtables.officer::tt_to_flextable(result)
 ## Summary
 
 ### Key Takeaways
+
+::::::: notes
+- Emphasize ROI of package development
+- Highlight reproducibility benefits
+- Stress importance of documentation and testing
+- Mention real-world impact on workflow efficiency
+- Encourage audience to start small with their own packages
+:::::::
 
 <br>
 
@@ -401,6 +510,14 @@ rtables.officer::tt_to_flextable(result)
 ## Resources
 
 <br>
+
+::::::: notes
+- Highlight key learning resources
+- Mention R Packages book as essential reference
+- Point out documentation tools (roxygen2)
+- Emphasize testing frameworks (testthat)
+- Note GitHub Actions for CI/CD implementation
+:::::::
 
 :::: {.columns}
 
@@ -420,6 +537,14 @@ rtables.officer::tt_to_flextable(result)
 
 ::::
 ## Q&A {background-color="#40666e"}
+
+::::::: notes
+- Prepare for common questions about package development
+- Have examples ready for different use cases
+- Be ready to discuss validation requirements
+- Mention resources for further learning
+- Highlight contact information for follow-up questions
+:::::::
 
 <br><br>
 
