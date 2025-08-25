@@ -64,10 +64,8 @@ I will use our junco package as a case study of R package devlopment for clinpha
 
 :::::: notes
 - Regulatory requirements create unique challenges
-- Consistency across studies critical
+- Consistency across studies is critical
 - Statistical methods often company-specific
-- Standardization reduces errors
-- Opportunity for R packages to solve these problems
 ::::::
   -
 The pharmaceutical industry faces unique challenges in clinical and statistical programming:
@@ -85,19 +83,27 @@ The pharmaceutical industry faces unique challenges in clinical and statistical 
 
 ## Shells Are Table Specific, Table Creation Is Not
 
+:::: notes
+We did something very similar to Roche's approach to build up on the core framework of rtables
+::::
+
 ### The Junco Package Approach
 
 Our solution was to develop our own business logic framework for J&J table creation
 
 ![](img/graph1.png)
 
-:::: notes
-We did something very similar to Roche's approach to build up on the core framework of rtables
-::::
+
 
 
 
 ## Getting to Production
+
+:::: notes
+Identifying key features to provide and solving those problems was a big part of our work but
+ I will not go to deep into it but let me know if you want ot know more about it
+and we will se soem of those feature in demon at the end
+::::
 
 The Junco package provides **key features** needed for production-ready clinical tables:
 
@@ -108,14 +114,18 @@ The Junco package provides **key features** needed for production-ready clinical
 - **Statistical calculations**: In accord with business logic
 - **Robust approach for risk diff columns**
 
-:::: notes
-Identifying key features to provide and solving those problems was a big part of my work but
- I will not go to deep into it but let me know if you want ot know more about it and we will se soem of those feature in demon at the end
-::::
-
 
 
 ## Limitations of Script-Based Solutions
+
+::::: notes
+Caveats of Shipping Standardized Code as Scripts
+Scripts are often the starting point for many R users, especially in pharma where SAS scripts have been the norm.
+However, as analyses become more complex and need to be shared across teams or studies, the limitations of scripts become apparent.
+Packages provide a structured solution to all these problems !
+they have formal documentation systems, dependency management, built-in testing frameworks, and proper versioning.
+Faciliatte knowledge transfer between team members
+:::::
 
 - **Poor portability**: Hardcoded paths and environment-specific settings
 - **Code duplication**: Functions often copied across multiple scripts
@@ -127,38 +137,20 @@ Identifying key features to provide and solving those problems was a big part of
 When standardized code is distributed as scripts, users spend significant time troubleshooting environment issues, manually tracking versions, and repeatedly reloading large files for small changes.
 :::::
 
+## Creating a Package/Library  {background-color="#fbfaf6"}
+
+### Code Design and API for Users
+
 ::::: notes
-
-Caveats of Shipping Standardized Code as Scripts
-Scripts are often the starting point for many R users, especially in pharma where SAS scripts have been the norm. However, as analyses become more complex and need to be shared across teams or studies, the limitations of scripts become apparent. Packages provide a structured solution to all these problems - they have formal documentation systems, dependency management, built-in testing frameworks, and proper versioning.
+A big challenge when writing package code the design API! Basically you ar not writing code for you  nor code that can be modifed by the user SO
+you need to spend a lot of time thinking about:
+- **Future extensibility**: Adding new features later often requires foresight in initial design. Example: A simple `plot_data()` function might need to evolve to support multiple visualization types, requiring a complete redesign if not initially structured to accommodate this.
+- **Breaking changes**: Once users adopt your functions, changing parameter names or return structures can break their code.
+- **Function and Parameter naming consistency**: Inconsistent naming patterns confuses users. example the tidyverse prefixing 9helps congitive load and function discovery)
+Also Using different parameter names for the same concept across functions creates confusion. Example: `treatment_group` in one function but `trt_grp` in another.
+- **Backward compatibility**: As your package evolves, maintaining support for older function calls becomes increasingly difficult without initial planning
 :::::
 
-##  Creating the package {background-color="#40666e"}
-
-:::::: notes
-Creating R packages helps pharmaceutical companies:
-- with - consistency, efficiency, compliance
-and facilitate knowledge transfer between users
-::::::
-
-<br>
-
-### From Scripts to Standardized Tools
-
-<br>
-
-:::::{.callout-note}
-## Industry Benefits
-
-
-
-* Maintain consistency across studies and therapeutic areas
-* Reduce time spent on repetitive coding tasks
-* Improve compliance with regulatory standards
-* Facilitate knowledge transfer between team members
-:::::
-
-## Code Design and API for Users {background-color="#fbfaf6"}
 
 :::: {.columns}
 
@@ -182,18 +174,15 @@ Once we had the core functionality working, we needed to focus on:
 API design is one of the most critical and challenging aspects of writing good code
 :::::
 
-::::: notes
-A big challenge for every wirting code for programmers is the design API
-- **Breaking changes**: Once users adopt your functions, changing parameter names or return structures can break their code.
-- **Function naming consistency**: Inconsistent naming patterns create cognitive load. Example: mixing verb-noun (`calculate_risk()`) with noun-verb (`risk_calculate()`) patterns confuses users. example the tidyverse prefixing
-- **Parameter consistency**: Using different parameter names for the same concept across functions creates confusion. Example: `treatment_group` in one function but `trt_grp` in another.
-- **Future extensibility**: Adding new features later often requires foresight in initial design. Example: A simple `plot_data()` function might need to evolve to support multiple visualization types, requiring a complete redesign if not initially structured to accommodate this.
-- **Backward compatibility**: As your package evolves, maintaining support for older function calls becomes increasingly difficult without initial planning. Example: The `dplyr` package maintaining both old and new verb forms during transitions.
 
-Investing time in thoughtful API design upfront saves enormous effort later and prevents user frustration when your package evolves.
-:::::
 
 ## Documentation
+
+:::: notes
+Extremely important to have good documentation,
+the package approach helps a ton by having a framework (i.e. roxygen2) which facilitates and streamlines the creation of documentation,
+you can also add CI/CD pipelines to apply strict rules to the developers to "force" them to write minimal documentation
+::::
 
 ### Using roxygen2 and pkgdown
 
@@ -230,12 +219,18 @@ pkgdown::build_site()
 ::::
 
 
-:::: notes
-Extremely important to have good documentation,
-the package approach helps a ton by having a framework (i.e. roxygen2) which faciliates and streamlines the creation of documentation, you can also add CI/CD pipelines to apply strict rules to the developers to "force" them to right minimal documentation
-::::
+
 
 ## Ensuring Package Quality
+
+:::: notes
+is specially important  for Pharmaceutical Validation
+unit test: Verify each function works as expected BRIEF EXAMPLE
+Code coverage: Metric that measures the percentage of our package's code executed by your tests:
+Integration tests ; Verify that multiple components of the system work together as expected. e.g. creating listings
+ All that helps to Include detailed information about validation status and intended use cases, to help users understand if the package meets their regulatory requirements.
+::::
+
 
 ### Unit Testing and Validation
 
@@ -245,7 +240,7 @@ Quality assurance is essential for pharmaceutical applications:
 
 ::: {.column width="50%"}
 - **Unit tests**: Verify each function works as expected
-- **Code coverage**: Metric that measures the percentage of your application's code executed by your tests: [junco's coverage](https://github.com/johnsonandjohnson/junco/blob/26e7c3470e40f2e2564ba5c0aa58902ce518de06/tests/testthat/test-pruning_functions.R#L23)
+- **Code coverage**: Metric that measures the percentage of your package's code executed by your tests: [junco's coverage](https://github.com/johnsonandjohnson/junco/blob/26e7c3470e40f2e2564ba5c0aa58902ce518de06/tests/testthat/test-pruning_functions.R#L23)
 - **Integration tests**: Ensure components work together correctly
 :::
 
@@ -278,14 +273,15 @@ test_that("2: we do expected an error", {
 
 ::::
 
-:::: notes
-Comprehensive testing Validating functionality across different scenarios ->
-Especially for Pharmaceutical Validation : Include detailed information about validation status and intended use cases to help users understand if the package meets their regulatory requirements.
 
-Inntegration tests ; Verify that multiple components/modules of the system work together as expected.
+## Continuous Integration and Deployment (CI/CD)
+
+:::: notes
+CI/CD is a process of Automating quality checks and deployments,
+It save a extreme amount time, reduce human errors and ensures consistency
+EXAMPLE CICD PIPELINES
 ::::
 
-## Continuous Integration and Deployment
 
 ### Automating Quality Checks
 
@@ -301,28 +297,26 @@ CI/CD reduces manual work while improving quality:
 
 
 :::::{.callout-note}
-Also available internally with Jenkins (but much more effort and knowledge needed)
+Also available internally with Jenkins (but MUCH more effort and knowledge needed)
 :::::
-
-:::: notes
-Continuous integration: Automating quality checks and deployment, save a extreme amount time, reduce human errors and ensures consistency
-::::
-
 
 
 # Advanced Topics {background-color="#40666e"}
+
+:::: notes
+pass..
+::::
 
 ## Version Control and Collaboration
 
 ### Best Practices for Team Development
 
 ::::: notes
-- Semantic versioning - communicate breaking changes
-- Git branching - isolate features, maintain stable main branch
+we use different tools and (softare) best practices
+- Semantic versioning - communicate breaking changes and Dependency management - critical for long-term maintenance
+- Git branching - isolate features, maintain stable branches, dev, main, etc..
 - Code review - catch bugs early, share knowledge
-- Issue tracking - prioritize work, document decisions
-- Dependency management - critical for long-term maintenance
-- Team workflows - establish clear contribution guidelines
+- Issue tracking - prioritize work, document decisions -> example of issue
 :::::
 
 Effective collaboration requires good processes:
@@ -332,9 +326,7 @@ Effective collaboration requires good processes:
 - **Code review**: Ensure quality and knowledge sharing
 - **Issue tracking**: Document bugs and feature requests → [issue #45](https://github.com/johnsonandjohnson/junco/issues/45#issuecomment-3200786303)
 
-:::: notes
-Managing dependencies is critical for long-term maintenance:
-::::
+
 
 
 ## Internal vs. External Packages
@@ -342,11 +334,11 @@ Managing dependencies is critical for long-term maintenance:
 ### Choosing the Right Distribution Method
 
 ::::::: notes
-- Distribution strategy depends on content sensitivity
-- Internal: proprietary methods, company-specific workflows
-- GitHub: faster feedback, community contributions
-- CRAN: wider adoption, stricter quality standards
-- Consider validation requirements for each approach
+Distribution strategy depends on content sensitivity
+- Internal: for proprietary methods and algos, company-specific workflows
+- GitHub: for quick way ti get stuff out faster feedback,
+- CRAN: wider adoption, SPACE and validation, stricter quality standards (now also r-universe)
+You need to  Consider validation requirements for each approach
 :::::::
 
 Different distribution methods serve different needs:
@@ -362,6 +354,12 @@ Internal packages often contain proprietary methods or company-specific workflow
 
 ## Open Sourcing in Pharma
 
+
+:::: notes
+Collaborative open source development offers significant advantages: say list now
+For example we work a lot with Roche's OS team and, release are tested in common -> explain
+::::
+
 ### Why Joining Efforts is More Efficient
 
 - **Standardization**: Common tools lead to more consistent and comparable analyses
@@ -374,10 +372,6 @@ Internal packages often contain proprietary methods or company-specific workflow
 The pharmaceutical industry is increasingly recognizing that pre-competitive collaboration on analytical tools benefits everyone. Projects like the R Validation Hub and Pharmaverse demonstrate how shared open source efforts can accelerate innovation while reducing costs.
 :::::
 
-:::: notes
-Collaborative open source development offers significant advantages: list list list
-For example we work a lot with Roche's OS team and release are tested in common -> explain
-::::
 
 
 
@@ -386,9 +380,9 @@ For example we work a lot with Roche's OS team and release are tested in common 
 ### Table Creation Script
 
 ::::::: notes
-- Live code demonstration of package capabilities
-- Key functions: split_cols_by, split_rows_by, analyze
-- Data preparation and transformation steps
+- Now I will show a little code demo but we don't have much time so I will just let it here in the presentation for those who want to check it out
+just showing the overview of the steps
+- Data preparation (ou synthetic data) pharmaverseadamjnj
 - Table layout definition process
 - Analysis function application
 :::::::
@@ -471,12 +465,13 @@ result <- build_table(lyt, ADEG)
 ## Rendered Table Output
 
 ::::::: notes
-- Final output visualization
-- Professional-quality tables for reports
+- Final output visualization (this is not exactly what our output looks like , it actually export to rtf or docx
+  - but for some reaosn doxc doesnt work very well in html presentation// BUT it gives out
 - Formatting consistent with regulatory requirements
-- Exportable to various formats (RTF, PDF, HTML)
-- Compare with traditional SAS output
+- Comparable with traditional SAS output
 :::::::
+  -
+Only on J&J internal network (External TL catalog)[https://sourcecode.jnj.com/pages/ASX-JFYC/junco_tlg_catalog_external/main/browse/]
 
 ```{r table-output}
 #| echo: true
@@ -491,11 +486,11 @@ rtables.officer::tt_to_flextable(result)
 ### Key Takeaways
 
 ::::::: notes
-- Emphasize ROI of package development
-- Highlight reproducibility benefits
-- Stress importance of documentation and testing
-- Mention real-world impact on workflow efficiency
-- Encourage audience to start small with their own packages
+- is taht R packages provide a **structured framework** for organizing code and
+- They **improve reproducibility** and **reduce human errors**
+- They also facilitate **Documentation and testing**
+- Packages can **streamline workflows** in pharmaceutical research and improve efficiency
+- Finally. The Return of investment in package development **often pays off** through reuse and reliability
 :::::::
 
 <br>
@@ -512,11 +507,7 @@ rtables.officer::tt_to_flextable(result)
 <br>
 
 ::::::: notes
-- Highlight key learning resources
-- Mention R Packages book as essential reference
-- Point out documentation tools (roxygen2)
-- Emphasize testing frameworks (testthat)
-- Note GitHub Actions for CI/CD implementation
+- Here are provided some key learning resources
 :::::::
 
 :::: {.columns}
@@ -539,24 +530,28 @@ rtables.officer::tt_to_flextable(result)
 ## Q&A {background-color="#40666e"}
 
 ::::::: notes
-- Prepare for common questions about package development
-- Have examples ready for different use cases
-- Be ready to discuss validation requirements
-- Mention resources for further learning
-- Highlight contact information for follow-up questions
+- Have questions about R package development or the Junco package?
+- Feel free to reach out using the contact information provided.
 :::::::
 
-<br><br>
+<br>
 
 :::: {.columns}
 
 ::: {.column width="60%"}
 ### Thank You for Your Attention!
+<br>
+<div style="margin-top: 10px;">
 
-<div style="margin-top: 20px;">
-Have questions about R package development or the Junco package?
+#### `junco` Team Acknowledgements:
 
-Feel free to reach out using the contact information provided.
+- Sairam Gorthi
+- Nick Masel
+- Ilse Augustyns
+- Dan Hofstaedter
+- Joe Kovach
+- Gabriel Becker
+
 </div>
 
 
