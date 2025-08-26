@@ -119,12 +119,11 @@ The Junco package provides **key features** needed for production-ready clinical
 ## Limitations of Script-Based Solutions
 
 ::::: notes
-Caveats of Shipping Standardized Code as Scripts
-Scripts are often the starting point for many R users, especially in pharma where SAS scripts have been the norm.
+Limitations
+Scripts are often the starting point for many R users, especially in pharma where SAS programs have been the norm.
 However, as analyses become more complex and need to be shared across teams or studies, the limitations of scripts become apparent.
 Packages provide a structured solution to all these problems !
-they have formal documentation systems, dependency management, built-in testing frameworks, and proper versioning.
-Faciliatte knowledge transfer between team members
+they have formal documentation systems, good portability dependency management, built-in testing frameworks, and proper versioning.
 :::::
 
 - **Poor portability**: Hardcoded paths and environment-specific settings
@@ -142,13 +141,12 @@ When standardized code is distributed as scripts, users spend significant time t
 ### Code Design and API for Users
 
 ::::: notes
-A big challenge when writing package code the design API! Basically you ar not writing code for you  nor code that can be modifed by the user SO
-you need to spend a lot of time thinking about:
-- **Future extensibility**: Adding new features later often requires foresight in initial design. Example: A simple `plot_data()` function might need to evolve to support multiple visualization types, requiring a complete redesign if not initially structured to accommodate this.
-- **Breaking changes**: Once users adopt your functions, changing parameter names or return structures can break their code.
-- **Function and Parameter naming consistency**: Inconsistent naming patterns confuses users. example the tidyverse prefixing 9helps congitive load and function discovery)
-Also Using different parameter names for the same concept across functions creates confusion. Example: `treatment_group` in one function but `trt_grp` in another.
-- **Backward compatibility**: As your package evolves, maintaining support for older function calls becomes increasingly difficult without initial planning
+
+A big challenge when writing package code the design API! Basically you ar not writing code for you  nor code that can be modified by the user SO
+you need to spend a lot of time thinking about different facets of implementing your code
+Once we had the core functionality working, we needed to focus on: User-friendly API, Consistent interface and building clear documentation !
+"Also think about - **Future extensibility** **consistent naming patterns** (because inconsistency  confuses users) example: `treatment_group` in one function but `trt_grp` in another. and consistent ones like: the tidyverse prefixing (helps reduce cognitive load and function discovery) prefix str_ map_
+Also very important is - **Backward compatibility** in pharma can add a feature without breaking old ones . think about it ahead or you are cooked
 :::::
 
 
@@ -156,12 +154,9 @@ Also Using different parameter names for the same concept across functions creat
 
 ::: {.column width="60%"}
 
-Once we had the core functionality working, we needed to focus on:
-
 - **User-friendly API**: Creating intuitive functions that match users' mental models
 - **Consistent interfaces**: Ensuring functions work together seamlessly
 - **Clear documentation**: Making the package accessible to non-developers
-
 
 :::
 
@@ -179,9 +174,9 @@ API design is one of the most critical and challenging aspects of writing good c
 ## Documentation
 
 :::: notes
-Extremely important to have good documentation,
+As we mentioned docu is  Extremely important,
 the package approach helps a ton by having a framework (i.e. roxygen2) which facilitates and streamlines the creation of documentation,
-you can also add CI/CD pipelines to apply strict rules to the developers to "force" them to write minimal documentation
+
 ::::
 
 ### Using roxygen2 and pkgdown
@@ -228,7 +223,7 @@ is specially important  for Pharmaceutical Validation
 unit test: Verify each function works as expected BRIEF EXAMPLE
 Code coverage: Metric that measures the percentage of our package's code executed by your tests:
 Integration tests ; Verify that multiple components of the system work together as expected. e.g. creating listings
- All that helps to Include detailed information about validation status and intended use cases, to help users understand if the package meets their regulatory requirements.
+All that helps users understand if the package meets their regulatory requirements.!
 ::::
 
 
@@ -240,7 +235,7 @@ Quality assurance is essential for pharmaceutical applications:
 
 ::: {.column width="50%"}
 - **Unit tests**: Verify each function works as expected
-- **Code coverage**: Metric that measures the percentage of your package's code executed by your tests: [junco's coverage](https://github.com/johnsonandjohnson/junco/blob/26e7c3470e40f2e2564ba5c0aa58902ce518de06/tests/testthat/test-pruning_functions.R#L23)
+- **Code coverage**: Metric that measures the percentage of your package's code executed by your tests: [junco's coverage](https://johnsonandjohnson.github.io/junco/_xml_coverage_reports/coverage.html)
 - **Integration tests**: Ensure components work together correctly
 :::
 
@@ -274,12 +269,20 @@ test_that("2: we do expected an error", {
 ::::
 
 
+# Advanced Topics {background-color="#40666e"}
+
+:::: notes
+pass..
+::::
+
+
 ## Continuous Integration and Deployment (CI/CD)
 
 :::: notes
 CI/CD is a process of Automating quality checks and deployments,
 It save a extreme amount time, reduce human errors and ensures consistency
 EXAMPLE CICD PIPELINES
+you can also add CI/CD pipelines to apply strict rules to the developers to "force" them to write minimal documentation for example
 ::::
 
 
@@ -289,7 +292,6 @@ CI/CD reduces manual work while improving quality:
 
 
 - **Automated testing**: Run tests on every code change
-- **Code coverage**: Ensure comprehensive test coverage
 - **Style checking**: Maintain consistent coding standards
 - **Documentation building**: Keep documentation in sync with code
 
@@ -300,12 +302,6 @@ CI/CD reduces manual work while improving quality:
 Also available internally with Jenkins (but MUCH more effort and knowledge needed)
 :::::
 
-
-# Advanced Topics {background-color="#40666e"}
-
-:::: notes
-pass..
-::::
 
 ## Version Control and Collaboration
 
@@ -334,11 +330,10 @@ Effective collaboration requires good processes:
 ### Choosing the Right Distribution Method
 
 ::::::: notes
-Distribution strategy depends on content sensitivity
-- Internal: for proprietary methods and algos, company-specific workflows
+You need to  Consider validation requirements for each approach
+- Internal: for proprietary algos, company-specific workflows
 - GitHub: for quick way ti get stuff out faster feedback,
 - CRAN: wider adoption, SPACE and validation, stricter quality standards (now also r-universe)
-You need to  Consider validation requirements for each approach
 :::::::
 
 Different distribution methods serve different needs:
@@ -465,13 +460,14 @@ result <- build_table(lyt, ADEG)
 ## Rendered Table Output
 
 ::::::: notes
-- Final output visualization (this is not exactly what our output looks like , it actually export to rtf or docx
-  - but for some reaosn doxc doesnt work very well in html presentation// BUT it gives out
+- Final output visualization (this is not exactly what our output looks like , it actually exports to rtf or docx SHOW THEM
+  - but for some reason doxc doesnt work very well in html presentation
 - Formatting consistent with regulatory requirements
 - Comparable with traditional SAS output
+- Here is a link for the catalog with all outputs (only for jnj users)
 :::::::
   -
-Only on J&J internal network (External TL catalog)[https://sourcecode.jnj.com/pages/ASX-JFYC/junco_tlg_catalog_external/main/browse/]
+Only on J&J internal network [External TLG catalog](https://sourcecode.jnj.com/pages/ASX-JFYC/junco_tlg_catalog_external/main/browse/)
 
 ```{r table-output}
 #| echo: true
@@ -486,11 +482,10 @@ rtables.officer::tt_to_flextable(result)
 ### Key Takeaways
 
 ::::::: notes
-- is taht R packages provide a **structured framework** for organizing code and
+- Key Takeaways are that R packages provide a **structured framework** for organizing code and
 - They **improve reproducibility** and **reduce human errors**
 - They also facilitate **Documentation and testing**
-- Packages can **streamline workflows** in pharmaceutical research and improve efficiency
-- Finally. The Return of investment in package development **often pays off** through reuse and reliability
+- Finally they can **streamline workflows** in pharmaceutical research and improve efficiency
 :::::::
 
 <br>
