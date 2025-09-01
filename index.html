@@ -442,7 +442,11 @@
   <meta name="generator" content="quarto-1.6.42">
 
   <meta name="author" content="David Munoz Tord - Senior R Developer">
+<<<<<<< HEAD
   <meta name="dcterms.date" content="2025-08-26">
+=======
+  <meta name="dcterms.date" content="2025-09-01">
+>>>>>>> 114be10 (CRUG version)
   <title>Building an R Package</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -1145,7 +1149,11 @@ David Munoz Tord - Senior R Developer <a href="https://orcid.org/0000-0001-7954-
     </div>
 </div>
 
+<<<<<<< HEAD
   <p class="date">August 26, 2025</p>
+=======
+  <p class="date">September 1, 2025</p>
+>>>>>>> 114be10 (CRUG version)
 </section>
 <section id="life-in-pharma-tables-tables-everywhere" class="slide level2">
 <h2>Life in Pharma: Tables, Tables Everywhere</h2>
@@ -1453,10 +1461,17 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 </section>
+<<<<<<< HEAD
 <section id="continuous-integration-and-deployment-cicd" class="slide level2">
 <h2>Continuous Integration and Deployment (CI/CD)</h2>
 <aside class="notes">
 <p>CI/CD is a process of Automating quality checks and deployments, It save a extreme amount time, reduce human errors and ensures consistency EXAMPLE CICD PIPELINES you can also add CI/CD pipelines to apply strict rules to the developers to “force” them to write minimal documentation for example</p>
+=======
+<section id="development-and-debugging-tools" class="slide level2">
+<h2>Development and Debugging Tools</h2>
+<aside class="notes">
+<p>Package structure provides natural integration with development tools that aren’t available for scripts. These tools save significant development time and improve code quality. Examples include devtools for streamlined workflow, code analysis tools like lintr, and dependency visualization with tools like pkgnet and CodeDepends. This integration significantly reduces development time and improves code quality.</p>
+>>>>>>> 114be10 (CRUG version)
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1468,6 +1483,7 @@ width: 1px!important;
 overflow: hidden!important;
 display:block!important;
 }</style></aside>
+<<<<<<< HEAD
 <h3 id="automating-quality-checks">Automating Quality Checks</h3>
 <p>CI/CD reduces manual work while improving quality:</p>
 <ul>
@@ -1476,16 +1492,83 @@ display:block!important;
 <li><strong>Documentation building</strong>: Keep documentation in sync with code</li>
 </ul>
 <p>→ Our <a href="https://github.com/johnsonandjohnson/junco/actions/runs/16960522080">GitHub actions</a></p>
+=======
+<h3 id="enhanced-development-experience">Enhanced Development Experience</h3>
+<p>Package structure enables seamless integration with powerful tools:</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li><strong>devtools/usethis</strong>: Streamlined package development workflow</li>
+<li><strong>CodeDepends</strong>: Analyze code dependencies and structure</li>
+<li><strong>pkgnet</strong>: Visualize package structure and dependencies</li>
+<li><strong>lintr/styler</strong>: Enforce coding standards automatically</li>
+<li><strong>profvis</strong>: Profile and optimize package performance</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href></a><span class="co"># Example: Package structure visualization</span></span>
+<span id="cb7-2"><a href></a><span class="fu">library</span>(pkgnet)</span>
+<span id="cb7-3"><a href></a><span class="fu">CreatePackageReport</span>(<span class="st">&quot;junco&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="https://munoztd0.github.io/R_Package-Dev/junco_report.html"><code>junco</code> package report</a></p>
+>>>>>>> 114be10 (CRUG version)
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
+<<<<<<< HEAD
 <p><strong>Note</strong></p>
 </div>
 <div class="callout-content">
 <p>Also available internally with Jenkins (but MUCH more effort and knowledge needed)</p>
+=======
+<p><strong>Development Efficiency</strong></p>
+</div>
+<div class="callout-content">
+<p>These tools are designed to work with the standardized structure of R packages, providing insights and automation.</p>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="what-about-shiny-apps" class="slide level2">
+<h2>What about Shiny Apps ?</h2>
+<aside class="notes">
+<p>Shiny apps can benefit greatly from being structured as packages. This approach provides better organization, testing capabilities, and deployment options. The frameworks mentioned offer different levels of structure and opinions on how to organize Shiny apps. Each has its own strengths and is suitable for different types of projects.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+<ul>
+<li><strong>Structure</strong>: Organized code is easier to maintain</li>
+<li><strong>Modularity</strong>: Reuse components across apps</li>
+<li><strong>Testing</strong>: Leverage R’s testing infrastructure</li>
+<li><strong>Production-readiness</strong>: Deployment and scaling</li>
+</ul>
+<p>Framework options:</p>
+<ul>
+<li><a href="https://thinkr-open.github.io/golem/"><strong>golem</strong></a>: Opinionated, full app-as-package workflow (dev/ scripts, CI, tests, deployment)</li>
+<li><a href="https://leprechaun.opifex.org/#/"><strong>leprechaun</strong></a>: Lighter, code generator for simple Shiny app-packages with JS/Sass support</li>
+<li><a href="https://appsilon.github.io/rhino/"><strong>rhino</strong></a>: Pharma-oriented, uses box modules, not a package but package-like structure</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Framework Selection</strong></p>
+</div>
+<div class="callout-content">
+<p>Choose based on complexity: golem (robust), leprechaun (lean), rhino (enterprise).</p>
+>>>>>>> 114be10 (CRUG version)
 </div>
 </div>
 </div>
@@ -1591,7 +1674,10 @@ display:block!important;
 <h3 id="table-creation-script">Table Creation Script</h3>
 <aside class="notes">
 <ul>
-<li>Now I will show a little code demo but we don’t have much time so I will just let it here in the presentation for those who want to check it out just showing the overview of the steps</li>
+<li>Now I will show a little code demo but we don’t have much time so I will just let it here in the presentation for those who want to check it out just showing the overview of the steps
+<ul>
+<li>But it shows why this is cool and I can do that with one line of code</li>
+</ul></li>
 <li>Data preparation (ou synthetic data) pharmaverseadamjnj</li>
 <li>Table layout definition process</li>
 <li>Analysis function application</li>
@@ -1608,71 +1694,71 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r code-overflow-scroll number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href></a><span class="fu">library</span>(junco)</span>
-<span id="cb7-2"><a href></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb7-3"><a href></a><span class="fu">library</span>(pharmaverseadamjnj)</span>
-<span id="cb7-4"><a href></a></span>
-<span id="cb7-5"><a href></a>ADEG <span class="ot">&lt;-</span> pharmaverseadamjnj<span class="sc">::</span>adeg <span class="sc">|&gt;</span></span>
-<span id="cb7-6"><a href></a>  <span class="fu">select</span>(STUDYID, USUBJID, TRT01A, PARAM, AVISIT, AVAL, CHG) <span class="sc">|&gt;</span></span>
-<span id="cb7-7"><a href></a>  <span class="fu">filter</span>(PARAM <span class="sc">==</span> <span class="st">&quot;ECG Mean Heart Rate (beats/min)&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-8"><a href></a></span>
-<span id="cb7-9"><a href></a>  <span class="fu">mutate</span>(<span class="at">colspan_trt =</span> <span class="fu">factor</span>(</span>
-<span id="cb7-10"><a href></a>    <span class="fu">if_else</span>(TRT01A <span class="sc">==</span> <span class="st">&quot;Placebo&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;Active Study Agent&quot;</span>),</span>
-<span id="cb7-11"><a href></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Active Study Agent&quot;</span>, <span class="st">&quot; &quot;</span>)</span>
-<span id="cb7-12"><a href></a>  )) <span class="sc">|&gt;</span></span>
-<span id="cb7-13"><a href></a></span>
-<span id="cb7-14"><a href></a>  <span class="fu">mutate</span>(<span class="at">rrisk_header =</span> <span class="st">&quot;Risk Difference (%) (95% CI)&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-15"><a href></a>  <span class="fu">mutate</span>(<span class="at">rrisk_label =</span> <span class="fu">paste</span>(TRT01A, <span class="fu">paste</span>(<span class="st">&quot;vs&quot;</span>, <span class="st">&quot;Placebo&quot;</span>)))</span>
-<span id="cb7-16"><a href></a></span>
-<span id="cb7-17"><a href></a>colspan_trt_map <span class="ot">&lt;-</span> <span class="fu">create_colspan_map</span>(ADEG,</span>
-<span id="cb7-18"><a href></a>  <span class="at">non_active_grp =</span> <span class="st">&quot;Placebo&quot;</span>,</span>
-<span id="cb7-19"><a href></a>  <span class="at">non_active_grp_span_lbl =</span> <span class="st">&quot; &quot;</span>,</span>
-<span id="cb7-20"><a href></a>  <span class="at">active_grp_span_lbl =</span> <span class="st">&quot;Active Study Agent&quot;</span>,</span>
-<span id="cb7-21"><a href></a>  <span class="at">colspan_var =</span> <span class="st">&quot;colspan_trt&quot;</span>,</span>
-<span id="cb7-22"><a href></a>  <span class="at">trt_var =</span> <span class="st">&quot;TRT01A&quot;</span></span>
-<span id="cb7-23"><a href></a>)</span>
-<span id="cb7-24"><a href></a>ref_path <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;colspan_trt&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;TRT01A&quot;</span>, <span class="st">&quot;Placebo&quot;</span>)</span>
-<span id="cb7-25"><a href></a></span>
-<span id="cb7-26"><a href></a>lyt <span class="ot">&lt;-</span> <span class="fu">basic_table</span>() <span class="sc">|&gt;</span></span>
-<span id="cb7-27"><a href></a>  <span class="fu">split_cols_by</span>(</span>
-<span id="cb7-28"><a href></a>    <span class="st">&quot;colspan_trt&quot;</span>,</span>
-<span id="cb7-29"><a href></a>    <span class="at">split_fun =</span> <span class="fu">trim_levels_to_map</span>(<span class="at">map =</span> colspan_trt_map)</span>
-<span id="cb7-30"><a href></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb7-31"><a href></a>  <span class="fu">split_cols_by</span>(<span class="st">&quot;TRT01A&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-32"><a href></a>  <span class="fu">split_rows_by</span>(</span>
-<span id="cb7-33"><a href></a>    <span class="st">&quot;PARAM&quot;</span>,</span>
-<span id="cb7-34"><a href></a>    <span class="at">label_pos =</span> <span class="st">&quot;topleft&quot;</span>,</span>
-<span id="cb7-35"><a href></a>    <span class="at">split_label =</span> <span class="st">&quot;Blood Pressure&quot;</span>,</span>
-<span id="cb7-36"><a href></a>    <span class="at">section_div =</span> <span class="st">&quot; &quot;</span>,</span>
-<span id="cb7-37"><a href></a>    <span class="at">split_fun =</span> drop_split_levels</span>
-<span id="cb7-38"><a href></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb7-39"><a href></a>  <span class="fu">split_rows_by</span>(</span>
-<span id="cb7-40"><a href></a>    <span class="st">&quot;AVISIT&quot;</span>,</span>
-<span id="cb7-41"><a href></a>    <span class="at">label_pos =</span> <span class="st">&quot;topleft&quot;</span>,</span>
-<span id="cb7-42"><a href></a>    <span class="at">split_label =</span> <span class="st">&quot;Study Visit&quot;</span>,</span>
-<span id="cb7-43"><a href></a>    <span class="at">split_fun =</span> drop_split_levels,</span>
-<span id="cb7-44"><a href></a>    <span class="at">child_labels =</span> <span class="st">&quot;hidden&quot;</span></span>
-<span id="cb7-45"><a href></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb7-46"><a href></a>  <span class="fu">split_cols_by_multivar</span>(</span>
-<span id="cb7-47"><a href></a>    <span class="fu">c</span>(<span class="st">&quot;AVAL&quot;</span>, <span class="st">&quot;AVAL&quot;</span>, <span class="st">&quot;CHG&quot;</span>),</span>
-<span id="cb7-48"><a href></a>    <span class="at">varlabels =</span> <span class="fu">c</span>(<span class="st">&quot;n/N (%)&quot;</span>, <span class="st">&quot;Mean (CI)&quot;</span>, <span class="st">&quot;CFB (CI)&quot;</span>)</span>
-<span id="cb7-49"><a href></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb7-50"><a href></a>  <span class="fu">split_cols_by</span>(<span class="st">&quot;rrisk_header&quot;</span>, <span class="at">nested =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb7-51"><a href></a>  <span class="fu">split_cols_by</span>(</span>
-<span id="cb7-52"><a href></a>    <span class="st">&quot;TRT01A&quot;</span>,</span>
-<span id="cb7-53"><a href></a>    <span class="at">split_fun =</span> <span class="fu">remove_split_levels</span>(<span class="st">&quot;Placebo&quot;</span>),</span>
-<span id="cb7-54"><a href></a>    <span class="at">labels_var =</span> <span class="st">&quot;rrisk_label&quot;</span></span>
-<span id="cb7-55"><a href></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb7-56"><a href></a>  <span class="fu">split_cols_by_multivar</span>(<span class="fu">c</span>(<span class="st">&quot;CHG&quot;</span>), <span class="at">varlabels =</span> <span class="fu">c</span>(<span class="st">&quot; &quot;</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb7-57"><a href></a>  <span class="fu">analyze</span>(<span class="st">&quot;STUDYID&quot;</span>,</span>
-<span id="cb7-58"><a href></a>    <span class="at">afun =</span> a_summarize_aval_chg_diff_j,</span>
-<span id="cb7-59"><a href></a>    <span class="at">extra_args =</span> <span class="fu">list</span>(</span>
-<span id="cb7-60"><a href></a>      <span class="at">format_na_str =</span> <span class="st">&quot;-&quot;</span>, <span class="at">d =</span> <span class="dv">0</span>,</span>
-<span id="cb7-61"><a href></a>      <span class="at">ref_path =</span> ref_path, <span class="at">variables =</span> <span class="fu">list</span>(<span class="at">arm =</span> <span class="st">&quot;TRT01A&quot;</span>, <span class="at">covariates =</span> <span class="cn">NULL</span>)</span>
-<span id="cb7-62"><a href></a>    )</span>
-<span id="cb7-63"><a href></a>  )</span>
-<span id="cb7-64"><a href></a></span>
-<span id="cb7-65"><a href></a>result <span class="ot">&lt;-</span> <span class="fu">build_table</span>(lyt, ADEG)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r code-overflow-scroll number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href></a><span class="fu">library</span>(junco)</span>
+<span id="cb8-2"><a href></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb8-3"><a href></a><span class="fu">library</span>(pharmaverseadamjnj)</span>
+<span id="cb8-4"><a href></a></span>
+<span id="cb8-5"><a href></a>ADEG <span class="ot">&lt;-</span> pharmaverseadamjnj<span class="sc">::</span>adeg <span class="sc">|&gt;</span></span>
+<span id="cb8-6"><a href></a>  <span class="fu">select</span>(STUDYID, USUBJID, TRT01A, PARAM, AVISIT, AVAL, CHG) <span class="sc">|&gt;</span></span>
+<span id="cb8-7"><a href></a>  <span class="fu">filter</span>(PARAM <span class="sc">==</span> <span class="st">&quot;ECG Mean Heart Rate (beats/min)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-8"><a href></a></span>
+<span id="cb8-9"><a href></a>  <span class="fu">mutate</span>(<span class="at">colspan_trt =</span> <span class="fu">factor</span>(</span>
+<span id="cb8-10"><a href></a>    <span class="fu">if_else</span>(TRT01A <span class="sc">==</span> <span class="st">&quot;Placebo&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;Active Study Agent&quot;</span>),</span>
+<span id="cb8-11"><a href></a>    <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Active Study Agent&quot;</span>, <span class="st">&quot; &quot;</span>)</span>
+<span id="cb8-12"><a href></a>  )) <span class="sc">|&gt;</span></span>
+<span id="cb8-13"><a href></a></span>
+<span id="cb8-14"><a href></a>  <span class="fu">mutate</span>(<span class="at">rrisk_header =</span> <span class="st">&quot;Risk Difference (%) (95% CI)&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-15"><a href></a>  <span class="fu">mutate</span>(<span class="at">rrisk_label =</span> <span class="fu">paste</span>(TRT01A, <span class="fu">paste</span>(<span class="st">&quot;vs&quot;</span>, <span class="st">&quot;Placebo&quot;</span>)))</span>
+<span id="cb8-16"><a href></a></span>
+<span id="cb8-17"><a href></a>colspan_trt_map <span class="ot">&lt;-</span> <span class="fu">create_colspan_map</span>(ADEG,</span>
+<span id="cb8-18"><a href></a>  <span class="at">non_active_grp =</span> <span class="st">&quot;Placebo&quot;</span>,</span>
+<span id="cb8-19"><a href></a>  <span class="at">non_active_grp_span_lbl =</span> <span class="st">&quot; &quot;</span>,</span>
+<span id="cb8-20"><a href></a>  <span class="at">active_grp_span_lbl =</span> <span class="st">&quot;Active Study Agent&quot;</span>,</span>
+<span id="cb8-21"><a href></a>  <span class="at">colspan_var =</span> <span class="st">&quot;colspan_trt&quot;</span>,</span>
+<span id="cb8-22"><a href></a>  <span class="at">trt_var =</span> <span class="st">&quot;TRT01A&quot;</span></span>
+<span id="cb8-23"><a href></a>)</span>
+<span id="cb8-24"><a href></a>ref_path <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;colspan_trt&quot;</span>, <span class="st">&quot; &quot;</span>, <span class="st">&quot;TRT01A&quot;</span>, <span class="st">&quot;Placebo&quot;</span>)</span>
+<span id="cb8-25"><a href></a></span>
+<span id="cb8-26"><a href></a>lyt <span class="ot">&lt;-</span> <span class="fu">basic_table</span>() <span class="sc">|&gt;</span></span>
+<span id="cb8-27"><a href></a>  <span class="fu">split_cols_by</span>(</span>
+<span id="cb8-28"><a href></a>    <span class="st">&quot;colspan_trt&quot;</span>,</span>
+<span id="cb8-29"><a href></a>    <span class="at">split_fun =</span> <span class="fu">trim_levels_to_map</span>(<span class="at">map =</span> colspan_trt_map)</span>
+<span id="cb8-30"><a href></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb8-31"><a href></a>  <span class="fu">split_cols_by</span>(<span class="st">&quot;TRT01A&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-32"><a href></a>  <span class="fu">split_rows_by</span>(</span>
+<span id="cb8-33"><a href></a>    <span class="st">&quot;PARAM&quot;</span>,</span>
+<span id="cb8-34"><a href></a>    <span class="at">label_pos =</span> <span class="st">&quot;topleft&quot;</span>,</span>
+<span id="cb8-35"><a href></a>    <span class="at">split_label =</span> <span class="st">&quot;Blood Pressure&quot;</span>,</span>
+<span id="cb8-36"><a href></a>    <span class="at">section_div =</span> <span class="st">&quot; &quot;</span>,</span>
+<span id="cb8-37"><a href></a>    <span class="at">split_fun =</span> drop_split_levels</span>
+<span id="cb8-38"><a href></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb8-39"><a href></a>  <span class="fu">split_rows_by</span>(</span>
+<span id="cb8-40"><a href></a>    <span class="st">&quot;AVISIT&quot;</span>,</span>
+<span id="cb8-41"><a href></a>    <span class="at">label_pos =</span> <span class="st">&quot;topleft&quot;</span>,</span>
+<span id="cb8-42"><a href></a>    <span class="at">split_label =</span> <span class="st">&quot;Study Visit&quot;</span>,</span>
+<span id="cb8-43"><a href></a>    <span class="at">split_fun =</span> drop_split_levels,</span>
+<span id="cb8-44"><a href></a>    <span class="at">child_labels =</span> <span class="st">&quot;hidden&quot;</span></span>
+<span id="cb8-45"><a href></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb8-46"><a href></a>  <span class="fu">split_cols_by_multivar</span>(</span>
+<span id="cb8-47"><a href></a>    <span class="fu">c</span>(<span class="st">&quot;AVAL&quot;</span>, <span class="st">&quot;AVAL&quot;</span>, <span class="st">&quot;CHG&quot;</span>),</span>
+<span id="cb8-48"><a href></a>    <span class="at">varlabels =</span> <span class="fu">c</span>(<span class="st">&quot;n/N (%)&quot;</span>, <span class="st">&quot;Mean (CI)&quot;</span>, <span class="st">&quot;CFB (CI)&quot;</span>)</span>
+<span id="cb8-49"><a href></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb8-50"><a href></a>  <span class="fu">split_cols_by</span>(<span class="st">&quot;rrisk_header&quot;</span>, <span class="at">nested =</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb8-51"><a href></a>  <span class="fu">split_cols_by</span>(</span>
+<span id="cb8-52"><a href></a>    <span class="st">&quot;TRT01A&quot;</span>,</span>
+<span id="cb8-53"><a href></a>    <span class="at">split_fun =</span> <span class="fu">remove_split_levels</span>(<span class="st">&quot;Placebo&quot;</span>),</span>
+<span id="cb8-54"><a href></a>    <span class="at">labels_var =</span> <span class="st">&quot;rrisk_label&quot;</span></span>
+<span id="cb8-55"><a href></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb8-56"><a href></a>  <span class="fu">split_cols_by_multivar</span>(<span class="fu">c</span>(<span class="st">&quot;CHG&quot;</span>), <span class="at">varlabels =</span> <span class="fu">c</span>(<span class="st">&quot; &quot;</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb8-57"><a href></a>  <span class="fu">analyze</span>(<span class="st">&quot;STUDYID&quot;</span>,</span>
+<span id="cb8-58"><a href></a>    <span class="at">afun =</span> a_summarize_aval_chg_diff_j,</span>
+<span id="cb8-59"><a href></a>    <span class="at">extra_args =</span> <span class="fu">list</span>(</span>
+<span id="cb8-60"><a href></a>      <span class="at">format_na_str =</span> <span class="st">&quot;-&quot;</span>, <span class="at">d =</span> <span class="dv">0</span>,</span>
+<span id="cb8-61"><a href></a>      <span class="at">ref_path =</span> ref_path, <span class="at">variables =</span> <span class="fu">list</span>(<span class="at">arm =</span> <span class="st">&quot;TRT01A&quot;</span>, <span class="at">covariates =</span> <span class="cn">NULL</span>)</span>
+<span id="cb8-62"><a href></a>    )</span>
+<span id="cb8-63"><a href></a>  )</span>
+<span id="cb8-64"><a href></a></span>
+<span id="cb8-65"><a href></a>result <span class="ot">&lt;-</span> <span class="fu">build_table</span>(lyt, ADEG)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="rendered-table-output" class="slide level2">
@@ -1699,10 +1785,14 @@ overflow: hidden!important;
 display:block!important;
 }</style></aside>
 <ul>
+<<<<<<< HEAD
 <li>Only on J&amp;J internal network <a href="https://sourcecode.jnj.com/pages/ASX-JFYC/junco_tlg_catalog_external/main/browse/">External TLG catalog</a></li>
+=======
+<li>Only on J&amp;J internal network <a href="https://sourcecode.jnj.com/pages/ASX-JFYC/junco_tlg_catalog_external/main/browse/">External TL catalog</a></li>
+>>>>>>> 114be10 (CRUG version)
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href></a>rtables.officer<span class="sc">::</span><span class="fu">tt_to_flextable</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href></a>rtables.officer<span class="sc">::</span><span class="fu">tt_to_flextable</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="tabwid tabwid_left"><style>.cl-c4f51594{table-layout:auto;}.cl-c4edb0ce{font-family:'Arial';font-size:9pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-c4edb0ec{font-family:'Arial';font-size:9pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-c4f04212{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:8.2pt;padding-right:5.4pt;line-height: 1;background-color:transparent;}.cl-c4f0421c{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-c4f04226{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:5.4pt;padding-right:5.4pt;line-height: 1;background-color:transparent;}.cl-c4f04227{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:11.1pt;padding-right:5.4pt;line-height: 1;background-color:transparent;}.cl-c4f04230{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:3pt;padding-left:5.4pt;padding-right:5.4pt;line-height: 1;background-color:transparent;}.cl-c4f04231{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:0;padding-top:0;padding-left:5.4pt;padding-right:5.4pt;line-height: 1;background-color:transparent;}.cl-c4f0423a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:10pt;padding-top:0;padding-left:11.1pt;padding-right:5.4pt;line-height: 1;background-color:transparent;}.cl-c4f0423b{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:10pt;padding-top:0;padding-left:5.4pt;padding-right:5.4pt;line-height: 1;background-color:transparent;}.cl-c4f05a22{background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a23{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a2c{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a2d{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a36{background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a37{background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a38{background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a40{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a41{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a42{background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a43{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a4a{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a4b{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a4c{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a4d{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a54{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(102, 102, 102, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a55{background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a56{background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a57{background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a5e{background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a5f{background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a60{background-color:transparent;vertical-align: top;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a68{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0.5pt solid rgba(102, 102, 102, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a69{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a72{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a73{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a74{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c4f05a75{background-color:transparent;vertical-align: top;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0.5pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-c4f51594"><thead><tr style="overflow-wrap:break-word;"><th class="cl-c4f05a22"><p class="cl-c4f04212"><span class="cl-c4edb0ce"> </span></p></th><th colspan="6" class="cl-c4f05a23"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">Active Study Agent</span></p></th><th colspan="3" class="cl-c4f05a36"><p class="cl-c4f0421c"><span class="cl-c4edb0ce"> </span></p></th><th colspan="2" class="cl-c4f05a40"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">Risk Difference (%) (95% CI)</span></p></th></tr><tr style="overflow-wrap:break-word;"><th class="cl-c4f05a42"><p class="cl-c4f04226"><span class="cl-c4edb0ce">Blood Pressure</span></p></th><th colspan="3" class="cl-c4f05a43"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">Apalutamide</span></p></th><th colspan="3" class="cl-c4f05a43"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">Apalutamide Subgroup</span></p></th><th colspan="3" class="cl-c4f05a43"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">Placebo</span></p></th><th class="cl-c4f05a4c"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">Apalutamide vs Placebo</span></p></th><th class="cl-c4f05a4d"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">Apalutamide Subgroup vs Placebo</span></p></th></tr><tr style="overflow-wrap:break-word;"><th class="cl-c4f05a54"><p class="cl-c4f04227"><span class="cl-c4edb0ce">  Study Visit</span></p></th><th class="cl-c4f05a43"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">n/N (%)</span></p></th><th class="cl-c4f05a4a"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">Mean (CI)</span></p></th><th class="cl-c4f05a4a"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">CFB (CI)</span></p></th><th class="cl-c4f05a43"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">n/N (%)</span></p></th><th class="cl-c4f05a4a"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">Mean (CI)</span></p></th><th class="cl-c4f05a4b"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">CFB (CI)</span></p></th><th class="cl-c4f05a43"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">n/N (%)</span></p></th><th class="cl-c4f05a4a"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">Mean (CI)</span></p></th><th class="cl-c4f05a4b"><p class="cl-c4f0421c"><span class="cl-c4edb0ce">CFB (CI)</span></p></th><th class="cl-c4f05a4c"><p class="cl-c4f0421c"><span class="cl-c4edb0ce"> </span></p></th><th class="cl-c4f05a4d"><p class="cl-c4f0421c"><span class="cl-c4edb0ce"> </span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-c4f05a55"><p class="cl-c4f04230"><span class="cl-c4edb0ce">ECG Mean Heart Rate (beats/min)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a5f"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a60"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c4f05a55"><p class="cl-c4f04227"><span class="cl-c4edb0ec">Baseline</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">72/72 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">322.1 (282.3, 361.9)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">96/96 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">283.2 (247.5, 318.9)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">86/86 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">299.4 (262.0, 336.7)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a5f"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td><td class="cl-c4f05a60"><p class="cl-c4f04231"><span class="cl-c4edb0ec"> </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c4f05a55"><p class="cl-c4f04227"><span class="cl-c4edb0ec">Month 1</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">72/72 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">333.1 (291.7, 374.5)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">11.0 (-47.3, 69.2)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">94/94 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">293.1 (259.1, 327.2)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">7.3 (-45.2, 59.8)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">84/84 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">288.5 (249.8, 327.2)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-13.3 (-66.3, 39.8)</span></p></td><td class="cl-c4f05a5f"><p class="cl-c4f04231"><span class="cl-c4edb0ec">24.2 (-53.9, 102.4)</span></p></td><td class="cl-c4f05a60"><p class="cl-c4f04231"><span class="cl-c4edb0ec">20.6 (-53.5, 94.6)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c4f05a55"><p class="cl-c4f04227"><span class="cl-c4edb0ec">Month 3</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">72/72 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">309.2 (272.8, 345.5)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-12.9 (-67.0, 41.1)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">73/73 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">336.3 (297.1, 375.6)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">51.4 (-9.5, 112.3)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">82/82 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">286.5 (247.0, 325.9)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-12.7 (-66.9, 41.4)</span></p></td><td class="cl-c4f05a5f"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-0.2 (-76.1, 75.6)</span></p></td><td class="cl-c4f05a60"><p class="cl-c4f04231"><span class="cl-c4edb0ec">64.2 (-16.7, 145.0)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c4f05a55"><p class="cl-c4f04227"><span class="cl-c4edb0ec">Month 6</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">68/68 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">323.9 (280.5, 367.3)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">7.6 (-50.6, 65.8)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">65/65 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">284.1 (239.8, 328.3)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-6.4 (-62.2, 49.3)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">76/76 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">307.1 (265.8, 348.5)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">9.8 (-43.6, 63.2)</span></p></td><td class="cl-c4f05a5f"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-2.2 (-80.5, 76.1)</span></p></td><td class="cl-c4f05a60"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-16.2 (-92.8, 60.3)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c4f05a55"><p class="cl-c4f04227"><span class="cl-c4edb0ec">Month 9</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">56/56 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">300.6 (255.0, 346.2)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-15.0 (-79.1, 49.0)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">60/60 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">319.2 (273.3, 365.0)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">25.6 (-45.0, 96.2)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">73/73 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">262.6 (220.2, 305.1)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-36.2 (-96.0, 23.7)</span></p></td><td class="cl-c4f05a5f"><p class="cl-c4f04231"><span class="cl-c4edb0ec">21.1 (-65.7, 107.9)</span></p></td><td class="cl-c4f05a60"><p class="cl-c4f04231"><span class="cl-c4edb0ec">61.8 (-29.9, 153.5)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c4f05a55"><p class="cl-c4f04227"><span class="cl-c4edb0ec">Month 12</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">50/50 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">288.3 (239.8, 336.8)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-26.9 (-100.4, 46.7)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">52/52 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">286.2 (238.0, 334.4)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-22.3 (-95.5, 51.0)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">69/69 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">287.9 (245.8, 330.1)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-11.0 (-69.4, 47.3)</span></p></td><td class="cl-c4f05a5f"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-15.8 (-108.7, 77.1)</span></p></td><td class="cl-c4f05a60"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-11.2 (-103.9, 81.5)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c4f05a55"><p class="cl-c4f04227"><span class="cl-c4edb0ec">Month 15</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">37/37 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">328.8 (273.6, 383.9)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">3.4 (-73.8, 80.6)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">42/42 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">286.3 (226.9, 345.8)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-7.1 (-94.8, 80.7)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">68/68 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">310.2 (270.9, 349.4)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">10.4 (-43.5, 64.3)</span></p></td><td class="cl-c4f05a5f"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-7.0 (-100.0, 86.0)</span></p></td><td class="cl-c4f05a60"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-17.5 (-119.5, 84.5)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c4f05a55"><p class="cl-c4f04227"><span class="cl-c4edb0ec">Month 18</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">32/32 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">327.8 (255.3, 400.3)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">10.5 (-83.5, 104.5)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">31/31 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">318.5 (255.6, 381.4)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">21.0 (-68.3, 110.3)</span></p></td><td class="cl-c4f05a56"><p class="cl-c4f04231"><span class="cl-c4edb0ec">66/66 (100.0%)</span></p></td><td class="cl-c4f05a57"><p class="cl-c4f04231"><span class="cl-c4edb0ec">290.5 (246.2, 334.8)</span></p></td><td class="cl-c4f05a5e"><p class="cl-c4f04231"><span class="cl-c4edb0ec">-5.1 (-67.2, 57.0)</span></p></td><td class="cl-c4f05a5f"><p class="cl-c4f04231"><span class="cl-c4edb0ec">15.6 (-95.6, 126.8)</span></p></td><td class="cl-c4f05a60"><p class="cl-c4f04231"><span class="cl-c4edb0ec">26.1 (-81.1, 133.4)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c4f05a68"><p class="cl-c4f0423a"><span class="cl-c4edb0ec">Month 24</span></p></td><td class="cl-c4f05a69"><p class="cl-c4f0423b"><span class="cl-c4edb0ec">30/30 (100.0%)</span></p></td><td class="cl-c4f05a72"><p class="cl-c4f0423b"><span class="cl-c4edb0ec">261.0 (202.5, 319.6)</span></p></td><td class="cl-c4f05a72"><p class="cl-c4f0423b"><span class="cl-c4edb0ec">-48.5 (-140.2, 43.2)</span></p></td><td class="cl-c4f05a69"><p class="cl-c4f0423b"><span class="cl-c4edb0ec">27/27 (100.0%)</span></p></td><td class="cl-c4f05a72"><p class="cl-c4f0423b"><span class="cl-c4edb0ec">330.8 (263.8, 397.8)</span></p></td><td class="cl-c4f05a73"><p class="cl-c4f0423b"><span class="cl-c4edb0ec">44.3 (-41.8, 130.5)</span></p></td><td class="cl-c4f05a69"><p class="cl-c4f0423b"><span class="cl-c4edb0ec">59/59 (100.0%)</span></p></td><td class="cl-c4f05a72"><p class="cl-c4f0423b"><span class="cl-c4edb0ec">306.1 (259.3, 352.8)</span></p></td><td class="cl-c4f05a73"><p class="cl-c4f0423b"><span class="cl-c4edb0ec">11.9 (-54.0, 77.8)</span></p></td><td class="cl-c4f05a74"><p class="cl-c4f0423b"><span class="cl-c4edb0ec">-60.4 (-171.6, 50.9)</span></p></td><td class="cl-c4f05a75"><p class="cl-c4f0423b"><span class="cl-c4edb0ec">32.5 (-74.2, 139.1)</span></p></td></tr></tbody></table></div>
 </div>

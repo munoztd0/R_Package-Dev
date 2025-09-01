@@ -303,6 +303,89 @@ Also available internally with Jenkins (but MUCH more effort and knowledge neede
 :::::
 
 
+
+# Advanced Topics {background-color="#40666e"}
+
+:::: notes
+pass..
+::::
+
+
+
+## Development and Debugging Tools
+
+::::: notes
+Package structure provides natural integration with development tools that aren't available for scripts.
+These tools save significant development time and improve code quality.
+Examples include devtools for streamlined workflow, code analysis tools like lintr,
+and dependency visualization with tools like pkgnet and CodeDepends.
+This integration significantly reduces development time and improves code quality.
+:::::
+
+### Enhanced Development Experience
+
+Package structure enables seamless integration with powerful tools:
+
+::::: {.columns}
+
+:::: {.column width="60%"}
+
+- **devtools/usethis**: Streamlined package development workflow
+- **CodeDepends**: Analyze code dependencies and structure
+- **pkgnet**: Visualize package structure and dependencies
+- **lintr/styler**: Enforce coding standards automatically
+- **profvis**: Profile and optimize package performance
+
+::::
+
+:::: {.column width="40%"}
+```r
+# Example: Package structure visualization
+library(pkgnet)
+CreatePackageReport("junco")
+```
+[`junco` package report](https://munoztd0.github.io/R_Package-Dev/junco_report.html)
+
+:::::{.callout-note}
+## Development Efficiency
+These tools are designed to work with the standardized structure of R packages, providing insights and automation.
+:::::
+
+::::
+
+
+:::::
+
+
+
+
+## What about Shiny Apps ?
+
+:::::: notes
+Shiny apps can benefit greatly from being structured as packages.
+This approach provides better organization, testing capabilities, and deployment options.
+The frameworks mentioned offer different levels of structure and opinions on how to organize Shiny apps.
+Each has its own strengths and is suitable for different types of projects.
+:::::
+
+- **Structure**: Organized code is easier to maintain
+- **Modularity**: Reuse components across apps
+- **Testing**: Leverage R's testing infrastructure
+- **Production-readiness**: Deployment and scaling
+
+Framework options:
+
+- [**golem**](https://thinkr-open.github.io/golem/): Opinionated, full app-as-package workflow (dev/ scripts, CI, tests, deployment)
+- [**leprechaun**](https://leprechaun.opifex.org/#/): Lighter, code generator for simple Shiny app-packages with JS/Sass support
+- [**rhino**](https://appsilon.github.io/rhino/): Pharma-oriented, uses box modules, not a package but package-like structure
+
+
+:::::{.callout-note}
+## Framework Selection
+Choose based on complexity: golem (robust), leprechaun (lean), rhino (enterprise).
+:::::
+
+
 ## Version Control and Collaboration
 
 ### Best Practices for Team Development
@@ -377,6 +460,7 @@ The pharmaceutical industry is increasingly recognizing that pre-competitive col
 ::::::: notes
 - Now I will show a little code demo but we don't have much time so I will just let it here in the presentation for those who want to check it out
 just showing the overview of the steps
+  -  But it shows why this is cool and I can do that with one line of code
 - Data preparation (ou synthetic data) pharmaverseadamjnj
 - Table layout definition process
 - Analysis function application
@@ -467,7 +551,7 @@ result <- build_table(lyt, ADEG)
 - Here is a link for the catalog with all outputs (only for jnj users)
 :::::::
   -
-Only on J&J internal network [External TLG catalog](https://sourcecode.jnj.com/pages/ASX-JFYC/junco_tlg_catalog_external/main/browse/)
+Only on J&J internal network [External TL catalog](https://sourcecode.jnj.com/pages/ASX-JFYC/junco_tlg_catalog_external/main/browse/)
 
 ```{r table-output}
 #| echo: true
