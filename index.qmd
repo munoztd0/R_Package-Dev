@@ -304,13 +304,6 @@ Also available internally with Jenkins (but MUCH more effort and knowledge neede
 
 
 
-# Advanced Topics {background-color="#40666e"}
-
-:::: notes
-pass..
-::::
-
-
 
 ## Development and Debugging Tools
 
